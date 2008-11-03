@@ -8,8 +8,6 @@
 </head>
 <body class="oneColElsCtrHdr">
 
-    <form id="form1" runat="server">
-
 <div id="container">
   <div id="header">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -68,6 +66,6 @@ pageTracker._trackPageview();
 </script>
   <!-- end #footer --></div>
 <!-- end #container --></div>
-    </form>
+
 </body>
 </html>
