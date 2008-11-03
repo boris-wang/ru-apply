@@ -74,8 +74,8 @@
     </table>
   </form></p></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Apply | 
-    Check Status | Admission | Site Map | Help</span></p>
+<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
     <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
