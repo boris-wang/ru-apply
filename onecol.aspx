@@ -18,7 +18,8 @@
   <p>Contents here.</p>
   <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><a href="default.aspx">Home</a> | Apply | Check Status | Admission | Site Map | Help</p>
+<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
   <!-- end #footer --></div>
 <!-- end #container --></div>
 </body>

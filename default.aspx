@@ -13,108 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>RU-Apply, The World's NO.1 Application System</title>
-<style type="text/css">
-<!--
-body {
-	font: 100% Verdana, Arial, Helvetica, sans-serif;
-	background: #666666;
-	margin: 0; 
-	padding: 0;
-	text-align: center; 
-	color: #000000;
-}
-.oneColElsCtrHdr #container {
-	width: 46em; 
-	background: #FFFFFF;
-	margin: 0 auto; 
-	border: 1px solid #000000;
-	text-align: left;
-}
-.oneColElsCtrHdr #header { 
-	background: #D21033; 
-	padding: 10px; 
-} 
-.oneColElsCtrHdr #header h1 {
-	margin: 0; 
-	padding: 10px 0;
-}
-.oneColElsCtrHdr #mainContent {
-	padding: 0 20px;
-	background: #FFFFFF;
-}
-.oneColElsCtrHdr #mainContent h1{
-font-size:20px;}
-.oneColElsCtrHdr #mainContent p{
-font-size:12px;}
-.oneColElsCtrHdr #mainContent td{
-font-size:12px;}
-td {
-	margin-top: 5px;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	margin-left: 5px;
-	padding-top: 10px;
-	padding-right: 20px;
-	padding-bottom: 10px;
-	padding-left: 20px;
-}
-.oneColElsCtrHdr #footer { 
-	padding: 0 10px; 
-	background:#D21033;
-	font-size: 9px;
-} 
-.oneColElsCtrHdr #footer p {
-	margin: 0; 
-	padding: 10px 0;
-}
-}
-td a:link{	
-	font-size:12px;
-	color:#000000;
-	text-decoration:none;
-	}
-	
-td a:visited{
-	font-size:12px;
-	color:#000000;
-	text-decoration:none;
-}
-td a:hover{
-	font-size:12px;
-	color:#D21033;
-	text-decoration:underline;
-}
-td a:active{
-	font-size:12px;
-	color:#D21033;
-	text-decoration:none;
-}
-.smallnote {	font-size: 9px;
-	color: #000000;
-	padding:10px;
-}
-.oneColElsCtrHdr #footer a:link{
-	font-size:9px;
-	color:#000000;
-	text-decoration:none;
-}
-
-.oneColElsCtrHdr #footer a:visited{
-	font-size:9px;
-	color:#000000;
-	text-decoration:none;
-}
-.oneColElsCtrHdr #footer a:hover{
-	font-size:9px;
-	color:#FFFFFF;
-	text-decoration:underline;
-}
-.oneColElsCtrHdr #footer a:active{
-	font-size:9px;
-	color:#FFFFFF;
-	text-decoration:underline;
-}
-</style>
+<link href="generic.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="oneColElsCtrHdr">
 
@@ -171,8 +70,8 @@ td a:active{
       
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><a href="default.aspx">Home</a> | Apply | Check Status | Admission | Site Map | 
-<a href="about.aspx">About</a>| <a href="help.aspx">Help</a><br />
+<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a><br />
         RU-Apply is a web application system based on ASP.NET technology.</p>
     <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

@@ -15,6 +15,7 @@
     <tr>
       <td width="200"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td></tr></table></div>
   <div id="mainContent">
+  <table width=100%><tr><td align=center><img src="images/indicator2-4.png" /></td></tr></table>
   <h1>Contact Information</h1>
   <p>Fields with * are required to fill.</p>
   <form action="">
@@ -23,76 +24,53 @@
         <td height="40" colspan="2"><strong><u>Current Mailing Address</u></strong></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Valid Through (MM/YYYY)<br />
+        <td width="50%" height="40"><p align="right">* Valid Through (MM/YYYY)<br />
         </p>        </td>
-        <td width="50%" height="40"><label>
-          <input name="validmm" type="text" id="validmm" size="2" maxlength="2" />
-        </label>
-          /
-          <label>
-          <input name="validyyyy" type="text" id="validyyyy" size="4" maxlength="4" />
-          </label></td>
+        <td width="50%" height="40">&nbsp;</td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Country<br />
+        <td width="50%" height="40"><p align="right">* Country<br />
         </p></td>
-        <td width="50%" height="40"><label>
-          <select name="currmailcountry" id="currmailcountry">
-          </select>
-        </label></td>
+        <td width="50%" height="40">&nbsp;</td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Street Address (Line 1)<br />
+        <td width="50%" height="40"><p align="right">* Street Address (Line 1)<br />
         </p></td>
-        <td width="50%" height="40"><label>
-          <input type="text" name="currmailadd1" id="currmailadd1" />
-        </label></td>
+        <td width="50%" height="40"><label>&nbsp;</label></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Street Address (Line 2)<br />
+        <td width="50%" height="40"><p align="right">* Street Address (Line 2)<br />
         </p></td>
-        <td width="50%" height="40"><label>
-          <input type="text" name="currmailadd2" id="currmailadd2" />
-        </label></td>
+        <td width="50%" height="40"><label>&nbsp;</label></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">City<br />
+        <td width="50%" height="40"><p align="right">* City<br />
         </p></td>
         <td width="50%" height="40"><label>
-          <input type="text" name="currmailcity" id="currmailcity" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td height="40"><div align="right">State/Province<br />
         </div></td>
-        <td height="40"><label>
-          <select name="currmailstate" id="currmailstate">
-          </select>
-        </label></td>
+        <td height="40">&nbsp;</td>
       </tr>
       <tr>
         <td height="40"><div align="right">Foreign State/Province</div></td>
-        <td height="40"><label>
-          <input type="text" name="currmailprovince" id="currmailprovince" />
-        </label></td>
+        <td height="40">&nbsp;</td>
       </tr>
       <tr>
-        <td height="40"><div align="right">Zip/Postal Code</div></td>
-        <td height="40"><label>
-          <input type="text" name="currzip" id="currzip" />
-        </label></td>
+        <td height="40"><div align="right">* Zip/Postal Code</div></td>
+        <td height="40">&nbsp;</td>
       </tr>
       <tr>
-        <td height="40"><div align="right">Telephone Number</div></td>
-        <td height="40"><label>
-          <input type="text" name="currmailphone" id="currmailphone" />
-        </label></td>
+        <td height="40"><div align="right">* Telephone Number</div></td>
+        <td height="40">&nbsp;</td>
       </tr>
       <tr>
         <td height="40" colspan="2"><u><strong>Permanent Address</strong></u></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Same as Present Mailing Address?<br />
+        <td width="50%" height="40"><p align="right">* Same as Present Mailing Address?<br />
         </p>          </td>
         <td width="50%" height="40"><label>
           <input type="radio" name="radio" id="persamecurryes" value="persamecurryes" />
@@ -221,7 +199,8 @@
   </form></p>
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Apply | Check Status | Admission | Site Map | Help</span></p>
+<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">

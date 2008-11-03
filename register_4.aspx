@@ -13,9 +13,9 @@
     <tr>
       <td width="200"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td></tr></table></div>
   <div id="mainContent">
+  <table width=100%><tr><td align="center"><img src="images/indicator4-4.png" /></td></tr></table>
   <h1>Standard Tests</h1>
   <p>Fields with * are required to fill.</p>
-      <form action="">
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
       <tr>
         <td height="40" colspan="2"><p><strong><u>GRE General Test</u></strong></p></td>
@@ -152,10 +152,10 @@
             Finish</label></div></td>
         </tr>
     </table>
-  </form></div>
+  </div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Apply | 
-    Check Status | Admission | Site Map | Help</span></p>
+<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
     <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">

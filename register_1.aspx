@@ -38,6 +38,7 @@
     <tr>
       <td width="200"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td></tr></table></div>
   <div id="mainContent">
+  <table width=100%><tr><td align=center><img src="images/indicator1-4.png" /></td></tr></table>
   <h1>Biographical Information</h1>
   <p>Fields with * are required to fill.</p>
   <form action="">
@@ -48,57 +49,48 @@
       <tr>
         <td width="50%" height="40"><p align="right">Title</p></td>
         <td width="50%" height="40"><label>
-          <select name="title" id="title">
-          </select>
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* First Name</p></td>
         <td width="50%" height="40"><label>
-          <input type="text" name="firstname" id="firstname" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Middle Name</p></td>
         <td width="50%" height="40"><label>
-          <input type="text" name="midname" id="midname" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Last Name</p></td>
         <td width="50%" height="40"><label>
-          <input type="text" name="lastname" id="lastname" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Suffix</p></td>
         <td width="50%" height="40"><label>
-          <input name="suffix" type="text" id="suffix" size="4" maxlength="4" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
-        <td height="40" colspan="2"><p class="othernametitle"><u>Other Full Name You May 
-            Have Used on Prior Academic Records</u></p></td>
+        <td height="40" colspan="2"><p><strong><u>Other Name You Have Used on Prior Academic Records</u> (Skip 
+            this section if not applicable.)</strong></p></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right" class="othername">First Name<br />
+        <td width="50%" height="40"><p align="right">First Name<br />
         </p></td>
         <td width="50%" height="40"><label>
-          <input type="text" name="otherfirstname" id="otherfirstname" onclick="return otherfirstname_onclick()" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><div align="right" class="othername">Middle Name<br />
+        <td width="50%" height="40"><div align="right">Middle Name<br />
         </div></td>
         <td width="50%" height="40"><label>
-          <input type="text" name="othermidname" id="othermidname" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
-        <td height="40"><div align="right" class="othername">Last Name</div></td>
+        <td height="40"><div align="right">Last Name</div></td>
         <td height="40"><label>
-          <input type="text" name="otherlastname" id="otherlastname" />
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td height="40" colspan="2"><strong><u>Other Biographical Information</u></strong></td>
@@ -106,70 +98,49 @@
       <tr>
         <td height="40"><p align="right">* Gender</p></td>
         <td height="40"><label>
-          <select name="gender" id="gender">
-          </select>
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
-        <td height="40"><p align="right">U.S. Social Security  Number<br />
+        <td height="40"><p align="right">U.S. Social Security Number<br />
         </p></td>
-        <td height="40"><label>
-          <input name="ssn1" type="text" id="ssn1" size="3" maxlength="3" />
-          -
-          <input name="ssn2" type="text" id="ssn2" size="2" maxlength="2" />
-          -
-          <input name="ssn3" type="text" id="ssn3" size="4" maxlength="4" />
-        </label></td>
+        <td height="40">
+            <label>
+          &nbsp;</label></td>
       </tr>
       <tr>
-        <td height="40"><div align="right">* Birth Date  (MM/DD/YYYY)<br />
+        <td height="40"><div align="right">* Birth Date (MM/DD/YYYY)<br />
         </div></td>
-        <td height="40"><label>
-          <input name="dob1" type="text" id="dob1" size="2" />
-          /
-          <input name="dob2" type="text" id="dob2" size="2" maxlength="2" />
-          /
-          <input name="dob3" type="text" id="dob3" size="4" maxlength="4" />
-        </label></td>
+        <td height="40">
+            <label>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Country of Birth<br />
         </div></td>
         <td height="40"><label>
-          <select name="countryofbirth" id="countryofbirth">
-          </select>
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Citizenship<br />
         </div></td>
         <td height="40"><label>
-          <select name="citizenship" id="citizenship">
-          </select>
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td height="40"><div align="right">
             <div align="right">Ethnic Background (Optional)&nbsp;</div>
         </div></td><td height="40"><label>
-        <select name="ethnic" id="ethnic">
-        </select>
-        </label></td>
+        &nbsp;</label></td>
       </tr>
       <tr>
-        <td height="40"><div align="right">Have You Ever Been  Convicted of A Felony? </div></td>
-        <td height="40"><label>
-          <input type="radio" name="radio" id="felonyyes" value="felonyyes" />
-        Yes
-        <input type="radio" name="radio" id="felonyno" value="felonyno" />
-        No</label></td>
+        <td height="40"><div align="right">* Have You Ever Been Convicted of A Felony? </div></td>
+        <td height="40"></td>
       </tr>
       <tr>
-        <td height="40"><div align="right">If yes, please explain.*<br />
+        <td height="40"><div align="right">If yes, please explain.<br />
         </div></td>
         <td rowspan="3"><label>
-          <textarea name="felonyexplain" id="felonyexplain" width="300px" height="98px"></textarea>
-        </label></td>
+          &nbsp;</label></td>
       </tr>
       <tr>
         <td height="40">&nbsp;</td>
@@ -180,13 +151,14 @@
         </tr>
       <tr>
         <td height="40" colspan="2"><div align="center">
-          &nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp; <a href="register_2.aspx">Next Page</a></div></td>
+            &nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp; <a href="register_3.aspx"">Next Page</a></div></td>
         </tr>
     </table>
   </form></p>
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Homes</a> | Admission | Site Map | Help</span></p>
+<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">
