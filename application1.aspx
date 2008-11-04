@@ -16,76 +16,121 @@
   <div id="mainContent">
   <table width="100%"><tr><td align="center"><img src="images/application1-4.png" /></td></tr></table>
   <h1 class="style1">Program Information</h1>
-  <form action="">
+      <form id="form1" runat="server">
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
       <tr>
         <td height="40" colspan="2" class="style2"><u>Campus and Program</u></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Campus</p></td>
-        <td width="50%" height="40"><label>
-          <select name="campus" id="campus">
-          </select>
-        </label></td>
+        <td width="50%" height="40">
+            <asp:DropDownList ID="campus" runat="server">
+                <asp:ListItem Selected="True" Value="Select One ...">Select One ...</asp:ListItem>
+                <asp:ListItem Value="New Brunswick">New Brunswick</asp:ListItem>
+                <asp:ListItem>Newark</asp:ListItem>
+                <asp:ListItem>Camdon</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Graduate School</p></td>
-        <td width="50%" height="40"><label>
-          <select name="gradschool" id="gradschool">
-          </select>
-        </label></td>
+        <td width="50%" height="40">
+            <asp:DropDownList ID="gradschool" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>School of Arts and Science</asp:ListItem>
+                <asp:ListItem>School of Environmental and Biological Sciences</asp:ListItem>
+                <asp:ListItem>College of Nursing</asp:ListItem>
+                <asp:ListItem>Edward J. Bloustein School of Planning and Public Policy</asp:ListItem>
+                <asp:ListItem>Ernest Mario School of Pharmacy</asp:ListItem>
+                <asp:ListItem>Graduate School–New Brunswick</asp:ListItem>
+                <asp:ListItem>Graduate School of Applied and Professional Psychology</asp:ListItem>
+                <asp:ListItem>Graduate School of Education</asp:ListItem>
+                <asp:ListItem>Mason Gross School of the Arts</asp:ListItem>
+                <asp:ListItem>Rutgers Business School–Newark and New Brunswick</asp:ListItem>
+                <asp:ListItem>School of Communication, Information and Library Studies</asp:ListItem>
+                <asp:ListItem>School of Engineering</asp:ListItem>
+                <asp:ListItem>School of Management and Labor Relations</asp:ListItem>
+                <asp:ListItem>School of Social Work</asp:ListItem>
+                <asp:ListItem>Summer Session</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Program</p></td>
-        <td width="50%" height="40"><label>
-          <select id="program" name="program">
-                <option></option>
-            </select></label></td>
+        <td width="50%" height="40">
+            <asp:DropDownList ID="program" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>Biomedical Engineering</asp:ListItem>
+                <asp:ListItem>Chemical and Biochemical Engineering</asp:ListItem>
+                <asp:ListItem>Civil and Environmental Engineering</asp:ListItem>
+                <asp:ListItem>Electrical and Computer Engineering</asp:ListItem>
+                <asp:ListItem>Industrial and Systems Engineering</asp:ListItem>
+                <asp:ListItem>Materials Science and Engineering</asp:ListItem>
+                <asp:ListItem>Mechanical and Aerospace Engineering</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td height="40" colspan="2"><strong><u>Other Enrollment Information</u></strong></td>
       </tr>
       <tr>
         <td height="40"><p align="right">* Enrollment Objective </p></td>
-        <td height="40"><label>
-          <select id="enrollobjective" name="enrollobjective">
-                <option></option>
-            </select>
-        </label></td>
+        <td height="40">
+            <asp:DropDownList ID="enrollobj" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>MS</asp:ListItem>
+                <asp:ListItem>PhD</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td height="40"><p align="right">* Entry Term<br />
         </p></td>
         <td height="40">
-            <label>
-          <select id="entryterm" name="entryterm">
-                <option></option>
-            </select>
-        </label></td>
+            <asp:DropDownList ID="entryterm" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>Spring</asp:ListItem>
+                <asp:ListItem>Summer</asp:ListItem>
+                <asp:ListItem>Autumn</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Entry Year<br />
         </div></td>
-        <td height="40"><label>
-          <select id="entryyear" name="entryyear">
-                <option></option>
-            </select>
-        </label></td>
+        <td height="40">
+            <asp:DropDownList ID="entryyearist1" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>2009</asp:ListItem>
+                <asp:ListItem>2010</asp:ListItem>
+                <asp:ListItem>2011</asp:ListItem>
+                <asp:ListItem>2012</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Full Time/Half Time<br />
         </div></td>
-        <td height="40"><label>
-          <select name="fullhalf" id="fullhalf">
-          </select>
-        </label></td>
+        <td height="40">
+            <asp:DropDownList ID="fullorhalf" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>Full Time</asp:ListItem>
+                <asp:ListItem>Half Time</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Area of Interest</p></td>
-        <td width="50%" height="40"><label>
-          <select id="area0" name="area0">
-                <option></option>
-            </select></label></td>
+        <td width="50%" height="40">
+            <asp:DropDownList ID="area" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>Communications</asp:ListItem>
+                <asp:ListItem>Computer Engnieering</asp:ListItem>
+                <asp:ListItem>Digital Signal Processing</asp:ListItem>
+                <asp:ListItem>Solid State Electronic</asp:ListItem>
+                <asp:ListItem>System and Control</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td height="40">Please list the faculty with whom you would like to study separate 
@@ -108,7 +153,8 @@
             &nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp; <a href="Application2.aspx">Next Page</a></div></td>
         </tr>
     </table>
-  </form></p>
+      </form>
+      </p>
     <!-- end #mainContent -->
   <!-- end #mainContent --></div>
   <div id="footer">
