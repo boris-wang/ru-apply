@@ -24,10 +24,14 @@
       <tr>
         <td width="50%" height="40" align=right>*College Name</td>
         <td width="50%" height="40">
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="collegename" runat="server">
                 <asp:ListItem Selected="True">Select One ...</asp:ListItem>
                 <asp:ListItem>Rutgers University</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;
+            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                ControlToValidate="collegename" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
@@ -39,6 +43,10 @@
                 <asp:ListItem>Newark</asp:ListItem>
                 <asp:ListItem>Camdon</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;&nbsp;
+            <asp:CompareValidator ID="CompareValidator2" runat="server" 
+                ControlToValidate="campus" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
@@ -62,6 +70,9 @@
                 <asp:ListItem>School of Social Work</asp:ListItem>
                 <asp:ListItem>Summer Session</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;<asp:CompareValidator ID="CompareValidator3" runat="server" 
+                ControlToValidate="gradschool" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
@@ -77,6 +88,10 @@
                 <asp:ListItem>Materials Science and Engineering</asp:ListItem>
                 <asp:ListItem>Mechanical and Aerospace Engineering</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;
+            <asp:CompareValidator ID="CompareValidator4" runat="server" 
+                ControlToValidate="program" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
@@ -90,6 +105,10 @@
                 <asp:ListItem>MS</asp:ListItem>
                 <asp:ListItem>PhD</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;
+            <asp:CompareValidator ID="CompareValidator5" runat="server" 
+                ControlToValidate="enrollobj" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
@@ -105,6 +124,10 @@
                 <asp:ListItem>Summer 2010</asp:ListItem>
                 <asp:ListItem>Autumn 2010</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;
+            <asp:CompareValidator ID="CompareValidator6" runat="server" 
+                ControlToValidate="entryterm" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
@@ -116,6 +139,10 @@
                 <asp:ListItem>Full Time</asp:ListItem>
                 <asp:ListItem>Half Time</asp:ListItem>
             </asp:DropDownList>
+          &nbsp;
+            <asp:CompareValidator ID="CompareValidator7" runat="server" 
+                ControlToValidate="fullorhalf" ErrorMessage="* Please select ..." 
+                Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
       </tr>
       <tr>
