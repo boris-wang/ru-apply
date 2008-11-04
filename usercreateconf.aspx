@@ -14,8 +14,8 @@
     <tr>
       <td width="200"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td></tr></table></div>
   <div id="mainContent">
-  <h1>Title</h1>
-  <p>Text Here</p>
+  <h1>Your account has been created!</h1>
+  <p><a href="myaccount.aspx">Click here to see your account profile.</a></p>
   <!-- end #mainContent --></div>
   <div id="footer">
 <p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
