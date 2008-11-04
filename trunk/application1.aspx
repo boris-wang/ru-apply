@@ -1,5 +1,14 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="application1.aspx.cs" Inherits="application1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+
+    protected void collegename_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,11 +33,12 @@
       <tr>
         <td width="50%" height="40" align=right>*College Name</td>
         <td width="50%" height="40">
-            <asp:DropDownList ID="collegename" runat="server">
+            <asp:DropDownList ID="collegename" runat="server" 
+                onselectedindexchanged="collegename_SelectedIndexChanged">
                 <asp:ListItem Selected="True">Select One ...</asp:ListItem>
                 <asp:ListItem>Rutgers University</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;
+            &nbsp;
             <asp:CompareValidator ID="CompareValidator1" runat="server" 
                 ControlToValidate="collegename" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
@@ -37,13 +47,14 @@
       <tr>
         <td width="50%" height="40"><p align="right">* Campus</p></td>
         <td width="50%" height="40">
-            <asp:DropDownList ID="campus" runat="server">
+            <asp:DropDownList ID="campus" runat="server" 
+                onselectedindexchanged="campus_SelectedIndexChanged">
                 <asp:ListItem Selected="True" Value="Select One ...">Select One ...</asp:ListItem>
                 <asp:ListItem Value="New Brunswick">New Brunswick</asp:ListItem>
                 <asp:ListItem>Newark</asp:ListItem>
                 <asp:ListItem>Camdon</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;&nbsp;
+            &nbsp;&nbsp;
             <asp:CompareValidator ID="CompareValidator2" runat="server" 
                 ControlToValidate="campus" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
@@ -70,7 +81,7 @@
                 <asp:ListItem>School of Social Work</asp:ListItem>
                 <asp:ListItem>Summer Session</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;<asp:CompareValidator ID="CompareValidator3" runat="server" 
+            &nbsp;<asp:CompareValidator ID="CompareValidator3" runat="server" 
                 ControlToValidate="gradschool" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
           </td>
@@ -88,7 +99,7 @@
                 <asp:ListItem>Materials Science and Engineering</asp:ListItem>
                 <asp:ListItem>Mechanical and Aerospace Engineering</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;
+            &nbsp;
             <asp:CompareValidator ID="CompareValidator4" runat="server" 
                 ControlToValidate="program" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
@@ -105,7 +116,7 @@
                 <asp:ListItem>MS</asp:ListItem>
                 <asp:ListItem>PhD</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;
+            &nbsp;
             <asp:CompareValidator ID="CompareValidator5" runat="server" 
                 ControlToValidate="enrollobj" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
@@ -124,7 +135,7 @@
                 <asp:ListItem>Summer 2010</asp:ListItem>
                 <asp:ListItem>Autumn 2010</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;
+            &nbsp;
             <asp:CompareValidator ID="CompareValidator6" runat="server" 
                 ControlToValidate="entryterm" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
@@ -139,7 +150,7 @@
                 <asp:ListItem>Full Time</asp:ListItem>
                 <asp:ListItem>Half Time</asp:ListItem>
             </asp:DropDownList>
-          &nbsp;
+            &nbsp;
             <asp:CompareValidator ID="CompareValidator7" runat="server" 
                 ControlToValidate="fullorhalf" ErrorMessage="* Please select ..." 
                 Operator="NotEqual" ValueToCompare="Select One ..."></asp:CompareValidator>
@@ -162,21 +173,28 @@
         <td height="40">Please list the faculty with whom you would like to study separate 
             each name with a semicolon(;).<br />
             (300 characters maximum)</td>
-        <td height="40"><label>
-            <textarea name="felonyexplain0" id="felonyexplain0"></textarea></label></td>
+        <td height="40">
+            <asp:TextBox ID="faculty" runat="server" TextMode="MultiLine"></asp:TextBox>
+          </td>
       </tr>
       <tr>
         <td height="40">Please list other graduate schools to which you are applying 
             separate each school name with a semicolon(;).<br />
             (300 characters maximum)</td>
-        <td><label>
-            <textarea name="otherschool" id="otherschool"></textarea></label></td>
+        <td>
+            <asp:TextBox ID="otherschool" runat="server" TextMode="MultiLine"></asp:TextBox>
+          </td>
       </tr>
         &nbsp;</td>
         </tr>
       <tr>
         <td height="40" colspan="2"><div align="center">
-            &nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp; <a href="Application2.aspx">Next Page</a></div></td>
+            &nbsp;<a href="Application2.aspx"><asp:Button 
+                ID="save" runat="server" Text="Save" onclick="save_Click" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="nextpage" runat="server" Text="Next Page" 
+                onclick="nextpage_Click" />
+            </a></div></td>
         </tr>
     </table>
       </form>
@@ -184,7 +202,8 @@
     <!-- end #mainContent -->
   <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | 
+    Admission | Site Map | 
 <a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
   <!-- end #footer --></div>
 <!-- end #container --></div>

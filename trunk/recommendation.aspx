@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="recommendation.aspx.cs" Inherits="applicationtry1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,44 +24,44 @@
       <tr>
         <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec1_fname" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
           &nbsp;
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec1_lname" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Organization/University</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec1_org" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Phone</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec1_phone" runat="server" ontextchanged="TextBox4_TextChanged"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Mailing Address</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec1_add" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec1_email" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Use online recommendation form?</p></td>
 <td width="50%" height="40">
-    <asp:RadioButtonList ID="useonline1" runat="server">
+    <asp:RadioButtonList ID="rec1_online" runat="server">
         <asp:ListItem Selected="True">Yes</asp:ListItem>
         <asp:ListItem>No</asp:ListItem>
     </asp:RadioButtonList>
@@ -73,43 +73,43 @@
       <tr>
         <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec2_fname" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec2_lname" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Organization/University</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec2_org" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Phone</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec2_phone" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Mailing Address</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec2_add" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec2_email" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Use online recommendation form?</p></td>
 <td width="50%" height="40">
-    <asp:RadioButtonList ID="useonline2" runat="server">
+    <asp:RadioButtonList ID="rec2_online" runat="server">
         <asp:ListItem Selected="True">Yes</asp:ListItem>
         <asp:ListItem>No</asp:ListItem>
     </asp:RadioButtonList>
@@ -121,43 +121,43 @@
       <tr>
         <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec3_fname" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec3_lname" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Organization/University</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec3_org" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Phone</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec3_phone" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Mailing Address</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec3_add" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
+            <asp:TextBox ID="rec3_email" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Use online recommendation form?</p></td>
 <td width="50%" height="40">
-    <asp:RadioButtonList ID="useonline3" runat="server">
+    <asp:RadioButtonList ID="rec3_online" runat="server">
         <asp:ListItem Selected="True">Yes</asp:ListItem>
         <asp:ListItem>No</asp:ListItem>
     </asp:RadioButtonList>
@@ -167,7 +167,13 @@
         </tr>
 <tr>
         <td height="40" colspan="2"><div align="center">
-            <a href="application3.aspx">Previous Page</a>&nbsp;&nbsp;&nbsp; Save&nbsp;&nbsp;&nbsp; Submit</div></td>
+            <asp:Button ID="previouspage" runat="server" Text="Previous Page" 
+                onclick="previouspage_Click" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="save" runat="server" Text="Save" onclick="save_Click" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="submit" runat="server" Text="Submit" onclick="submit_Click" />
+            </div></td>
         </tr>
     </table>
       </form>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="application2.aspx.cs" Inherits="application2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
@@ -32,7 +32,7 @@
       <tr>
         <td width="50%" height="40"><p align="right">Type of Industry</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="type1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="type1" runat="server" ontextchanged="type1_TextChanged"></asp:TextBox>
                     </td>
       </tr>
       <tr>
@@ -106,7 +106,7 @@
                 <asp:ListItem>2009</asp:ListItem>
                 <asp:ListItem>2010</asp:ListItem>
             </asp:DropDownList>
-&nbsp;<label>
+            &nbsp;<label>
             <br />
             To&nbsp;&nbsp; &nbsp;<asp:DropDownList ID="mmto1" runat="server">
             <asp:ListItem Selected="True">Select One ...</asp:ListItem>
@@ -147,17 +147,19 @@
                 <asp:ListItem>2009</asp:ListItem>
                 <asp:ListItem>2010</asp:ListItem>
             </asp:DropDownList>
-&nbsp; </label>
+            &nbsp; </label>
                     </td>
       </tr>
       <tr>
         <td height="40" align="right">Please describe your job.<br />
             (300 characters maximum)</td>
-        <td><label>
-            <textarea name="otherschool" id="describe1"></textarea></label></td>
+        <td>
+            <asp:TextBox ID="describe1" runat="server" TextMode="MultiLine"></asp:TextBox>
+          </td>
       </tr>
       <tr>
-        <td height="40" colspan="2"><strong><u>Employment Experience</u> (Skip this section if not applicable.)</strong></td>
+        <td height="40" colspan="2"><strong><u>Employment Experience</u> (Skip this section 
+            if not applicable.)</strong></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Employer Name<Employer Name</p></td>
@@ -203,7 +205,7 @@
       <tr>
         <td width="50%" height="40"><p align="right">Dates of Employment (MM/YYYY)</p></td>
         <td width="50%" height="40"><label>
-           From<asp:DropDownList ID="mmfrom2" runat="server">
+            From<asp:DropDownList ID="mmfrom2" runat="server">
             <asp:ListItem Selected="True">Select One ...</asp:ListItem>
             <asp:ListItem>01</asp:ListItem>
             <asp:ListItem>02</asp:ListItem>
@@ -242,7 +244,7 @@
                 <asp:ListItem>2009</asp:ListItem>
                 <asp:ListItem>2010</asp:ListItem>
             </asp:DropDownList>
-&nbsp;<label>
+            &nbsp;<label>
             <br />
             To&nbsp;&nbsp; &nbsp;<asp:DropDownList ID="mmto2" runat="server">
             <asp:ListItem Selected="True">Select One ...</asp:ListItem>
@@ -283,16 +285,18 @@
                 <asp:ListItem>2009</asp:ListItem>
                 <asp:ListItem>2010</asp:ListItem>
             </asp:DropDownList>
-&nbsp; </label></td>
+            &nbsp; </label></td>
       </tr>
       <tr>
         <td height="40" align="right">Please describe your job.<br />
             (300 characters maximum)</td>
-        <td><label>
-            <textarea name="otherschool" id="describe2"></textarea></label></td>
+        <td>
+            <asp:TextBox ID="describe2" runat="server" TextMode="MultiLine"></asp:TextBox>
+          </td>
       </tr>
       <tr>
-        <td height="40" colspan="2"><strong><u>Employment Experience</u> (Skip this section if not applicable.)</strong></td>
+        <td height="40" colspan="2"><strong><u>Employment Experience</u> (Skip this section 
+            if not applicable.)</strong></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Employer Name</p></td>
@@ -379,7 +383,7 @@
                 <asp:ListItem>2009</asp:ListItem>
                 <asp:ListItem>2010</asp:ListItem>
             </asp:DropDownList>
-&nbsp;<label>
+            &nbsp;<label>
             <br />
             To&nbsp;&nbsp; &nbsp;<asp:DropDownList ID="mmto3" runat="server">
             <asp:ListItem Selected="True">Select One ...</asp:ListItem>
@@ -420,26 +424,35 @@
                 <asp:ListItem>2009</asp:ListItem>
                 <asp:ListItem>2010</asp:ListItem>
             </asp:DropDownList>
-&nbsp; </label></td>
+            &nbsp; </label></td>
       </tr>
       <tr>
         <td height="40" align="right">Please describe your job.<br />
             (300 characters maximum) </td>
-        <td><label>
-            <textarea name="otherschool" id="describe3"></textarea></label></td>
+        <td>
+            <asp:TextBox ID="describe3" runat="server" TextMode="MultiLine"></asp:TextBox>
+          </td>
       </tr>
         &nbsp;</td>
         </tr>
 <tr>
         <td height="40" colspan="2"><div align="center">
-            <a href="Application1.aspx">Previous Page</a>&nbsp;&nbsp;&nbsp;&nbsp; Save&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="Application3.aspx">Next Page</a></div></td>
+            <a href="Application3.aspx">
+            <asp:Button ID="previouspage" runat="server" Text="Previous Page" 
+                onclick="previouspage_Click" />
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="save" runat="server" Text="Save" onclick="save_Click" />
+            &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="nextpage" runat="server" Text="Next Page" 
+                onclick="nextpage_Click" />
+            </a></div></td>
         </tr>
     </table>
             </form>
   <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | 
+    Admission | Site Map | 
 <a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
   <!-- end #footer --></div>
 <!-- end #container --></div>
