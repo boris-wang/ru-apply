@@ -22,13 +22,14 @@
         <td height="40" colspan="2"><strong><u>Recommendation Provider 1</u></strong></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">First Name</p></td>
+        <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+          &nbsp;
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Last Name</p></td>
+        <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
           </td>
@@ -52,13 +53,13 @@
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Email</p></td>
+        <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Use online recommendation form?</p></td>
+        <td width="50%" height="40"><p align="right">*Use online recommendation form?</p></td>
 <td width="50%" height="40">
     <asp:RadioButtonList ID="useonline1" runat="server">
         <asp:ListItem Selected="True">Yes</asp:ListItem>
@@ -70,13 +71,13 @@
         <td height="40" colspan="2"><strong><u>Recommendation Provider 2</u></strong></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">First Name</p></td>
+        <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Last Name</p></td>
+        <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
           </td>
@@ -100,13 +101,13 @@
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Email</p></td>
+        <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Use online recommendation form?</p></td>
+        <td width="50%" height="40"><p align="right">*Use online recommendation form?</p></td>
 <td width="50%" height="40">
     <asp:RadioButtonList ID="useonline2" runat="server">
         <asp:ListItem Selected="True">Yes</asp:ListItem>
@@ -118,13 +119,13 @@
         <td height="40" colspan="2"><strong><u>Recommendation Provider 3</u></strong></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">First Name</p></td>
+        <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Last Name</p></td>
+        <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
           </td>
@@ -148,13 +149,13 @@
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Email</p></td>
+        <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">Use online recommendation form?</p></td>
+        <td width="50%" height="40"><p align="right">*Use online recommendation form?</p></td>
 <td width="50%" height="40">
     <asp:RadioButtonList ID="useonline3" runat="server">
         <asp:ListItem Selected="True">Yes</asp:ListItem>
