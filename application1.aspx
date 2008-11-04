@@ -98,9 +98,12 @@
         <td height="40">
             <asp:DropDownList ID="entryterm" runat="server">
                 <asp:ListItem Selected="True">Select One ...</asp:ListItem>
-                <asp:ListItem>Spring</asp:ListItem>
-                <asp:ListItem>Summer</asp:ListItem>
-                <asp:ListItem>Autumn</asp:ListItem>
+                <asp:ListItem>Spring 2009</asp:ListItem>
+                <asp:ListItem>Summer 2009</asp:ListItem>
+                <asp:ListItem>Autumn 2009</asp:ListItem>
+                <asp:ListItem>Spring 2010</asp:ListItem>
+                <asp:ListItem>Summer 2010</asp:ListItem>
+                <asp:ListItem>Autumn 2010</asp:ListItem>
             </asp:DropDownList>
           </td>
       </tr>
