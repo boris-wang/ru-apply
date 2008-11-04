@@ -18,8 +18,8 @@
   <h1 class="style1">Program Information</h1>
       <form id="form1" runat="server">
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
-      <tr>ff
-        <td height="40" colspan="2" class="style2"><u>Campus and Program</u></td>
+      <tr>
+        <td height="40" colspan="2" class="style2"><strong><u>Campus and Program</u></td>
       </tr>
       <tr>
         <td width="50%" height="40" align=right>*College Name</td>
