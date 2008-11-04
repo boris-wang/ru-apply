@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="application3.aspx.cs" Inherits="application3" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,7 +28,7 @@
       <tr>
         <td height="40" colspan="2">
             <asp:Button ID="uploadPS" runat="server" style="text-align: center" 
-                Text="Upload Statement of Purpose" />
+                Text="Upload Statement of Purpose" onclick="uploadPS_Click" />
           </td>
       </tr>
       <tr>
@@ -75,7 +75,15 @@
         </tr>
 <tr>
         <td height="40" colspan="2"><div align="center">
-            <a href="Application2.aspx">Previous Page</a>&nbsp;&nbsp;&nbsp;&nbsp; Save&nbsp;&nbsp;&nbsp;&nbsp; <a href=recommendation.aspx>Next Page</a></div></td>
+            <a href=recommendation.aspx>
+            <asp:Button ID="previouspage" runat="server" Text="Previous Page" 
+                onclick="previouspage_Click" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="save" runat="server" Text="Save" onclick="save_Click" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="nextpage" runat="server" Text="Next Page" 
+                onclick="nextpage_Click" />
+            </a></div></td>
         </tr>
     </table>
   <!-- end #mainContent --></div>
