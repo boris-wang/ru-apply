@@ -18,8 +18,17 @@
   <h1 class="style1">Program Information</h1>
       <form id="form1" runat="server">
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
-      <tr>
+      <tr>ff
         <td height="40" colspan="2" class="style2"><u>Campus and Program</u></td>
+      </tr>
+      <tr>
+        <td width="50%" height="40" align=right>*College Name</td>
+        <td width="50%" height="40">
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
+                <asp:ListItem>Rutgers University</asp:ListItem>
+            </asp:DropDownList>
+          </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Campus</p></td>
@@ -92,19 +101,6 @@
                 <asp:ListItem>Spring</asp:ListItem>
                 <asp:ListItem>Summer</asp:ListItem>
                 <asp:ListItem>Autumn</asp:ListItem>
-            </asp:DropDownList>
-          </td>
-      </tr>
-      <tr>
-        <td height="40"><div align="right">* Entry Year<br />
-        </div></td>
-        <td height="40">
-            <asp:DropDownList ID="entryyearist1" runat="server">
-                <asp:ListItem Selected="True">Select One ...</asp:ListItem>
-                <asp:ListItem>2009</asp:ListItem>
-                <asp:ListItem>2010</asp:ListItem>
-                <asp:ListItem>2011</asp:ListItem>
-                <asp:ListItem>2012</asp:ListItem>
             </asp:DropDownList>
           </td>
       </tr>
