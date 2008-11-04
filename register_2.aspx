@@ -50,12 +50,8 @@
           &nbsp;</label></td>
       </tr>
       <tr>
-        <td height="40"><div align="right">State/Province<br />
+        <td height="40"><div align="right">* State/Province<br />
         </div></td>
-        <td height="40">&nbsp;</td>
-      </tr>
-      <tr>
-        <td height="40"><div align="right">Foreign State/Province</div></td>
         <td height="40">&nbsp;</td>
       </tr>
       <tr>
@@ -118,15 +114,7 @@
           </label></td>
       </tr>
       <tr>
-        <td height="40"><p align="right">State/Province<br />
-        </p></td>
-        <td height="40"><label>
-          <select name="perstate" id="perstate">
-          </select>
-        </label></td>
-      </tr>
-      <tr>
-        <td height="40"><div align="right">Foreign State/Province</div></td>
+        <td height="40"><div align="right">State/Province</div></td>
         <td height="40"><label></label>
           <label>
           <input type="text" name="perprovince" id="perprovince" />
