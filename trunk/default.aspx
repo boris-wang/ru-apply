@@ -10,32 +10,7 @@
 
     protected void UserLogin(object sender, EventArgs e)
     {
-        //input these three info in the testboxs
-        string USERNAME = TextBox1.Text;
-        string EMAIL = TextBox2.Text;
-        string PASSWORD = TextBox3.Text;
-        string QUESTION = TextBox5.Text;
-        string ANSWER = TextBox6.Text;
 
-        //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection = "Data Source=jordan\\SQLEXPRESS;Initial Catalog=RegisteredUsers;Integrated Security=True";
-        System.Data.SqlClient.SqlConnection myConnection = new System.Data.SqlClient.SqlConnection(MysqlConnection);
-        myConnection.Open();
-
-        //insert function
-        string InsertCommand = "insert into login_db (username,password,email,question,answer) values (@USERNAME,@PASSWORD,@EMAIL,@QUESTION,@ANSWER)";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection);
-        cmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
-        cmd.Parameters.Add("@PASSWORD", System.Data.SqlDbType.VarChar, 20).Value = PASSWORD;
-        cmd.Parameters.Add("@EMAIL", System.Data.SqlDbType.VarChar, 50).Value = EMAIL;
-        cmd.Parameters.Add("@QUESTION", System.Data.SqlDbType.VarChar, 1000).Value = QUESTION;
-        cmd.Parameters.Add("@ANSWER", System.Data.SqlDbType.VarChar, 1000).Value = ANSWER;
-
-
-        cmd.ExecuteNonQuery();
-
-        myConnection.Close();
-        Response.Redirect("usercreateconf.aspx");
     }
 </script>
 
