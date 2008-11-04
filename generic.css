@@ -33,6 +33,7 @@ body {
 }
 .oneColElsCtrHdr #mainContent p {
 	font-size:12px;
+    width: 336px;
 }
 .oneColElsCtrHdr #mainContent td {
 	font-size:12px;
