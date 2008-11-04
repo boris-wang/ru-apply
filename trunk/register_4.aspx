@@ -123,7 +123,7 @@
       </tr>
       <tr>
         <td height="40" colspan="2"><p><strong><u>IELTS</u></strong></p></td>
-        <td>&nbsp;</td>
+
       </tr>
       <tr>
         <td height="40"><p align="right">Date Taken / Expected<br />
@@ -136,7 +136,7 @@
       </tr>
       <tr>
         <td height="40" colspan="2"><p><strong><u>TSE</u></strong></p></td>
-        <td>&nbsp;</td>
+        
       </tr>
       <tr>
         <td height="40"><div align="right">Date Taken / Expected</div></td>
