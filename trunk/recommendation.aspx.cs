@@ -33,7 +33,7 @@ public partial class applicationtry1 : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //insert function
-        string InsertCommand = "insert into STU_INFO (rec1fname,rec1lname,rec1org,rec1phone,rec1add,rec1email,rec1online) values (@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        string InsertCommand = "insert into recommend(rec1fname,rec1lname,rec1org,rec1phone,rec1add,rec1email,rec1online) values (@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (InsertCommand, myConnection); 
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;
@@ -67,7 +67,7 @@ public partial class applicationtry1 : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //insert function
-        string InsertCommand = "insert into STU_INFO (rec1fname,rec1lname,rec1org,rec1phone,rec1add,rec1email,rec1online) values (@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        string InsertCommand = "insert into recommend(rec1fname,rec1lname,rec1org,rec1phone,rec1add,rec1email,rec1online) values (@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (InsertCommand, myConnection);
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;

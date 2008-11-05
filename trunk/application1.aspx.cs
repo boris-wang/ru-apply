@@ -37,7 +37,7 @@ public partial class application1 : System.Web.UI.Page
         myConnection.Open();
 
 
-        string InsertCommand = "insert into STU_INFO(collegename,campus,gradschool,program,enrollobj,entryterm,fullorhalf,area,faculty,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
+        string InsertCommand = "insert into program_info(collegename,campus,gradschool,program,enrollobj,entryterm,fullorhalf,area,faculty,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection); 
         cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = collegename;
         cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = campus;
@@ -73,7 +73,7 @@ public partial class application1 : System.Web.UI.Page
         myConnection.Open();
 
         //insert function
-        string InsertCommand = "insert into STU_INFO(collegename,campus,gradschool,program,enrollobj,entryterm,fullorhalf,area,faculty,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
+        string InsertCommand = "insert into program_info(collegename,campus,gradschool,program,enrollobj,entryterm,fullorhalf,area,faculty,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
         (InsertCommand, myConnection);
         cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = collegename;

@@ -38,7 +38,7 @@ string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog 
         myConnection.Open();
 
 //insert function
-        string InsertCommand = "insert into STU_INFO (emp1_name,type_1,title_1,city_1,state_1,country_1,emp1_mm_from,emp1_yyyy_from,emp1_mm_to,emp1_yyyy_to,describe_1) values (@emp1name,@type1,@title1,@city1,@state1,@country1,@mmfrom1,@yyfrom1,@mmto1,@yyto1,@describe1)";
+        string InsertCommand = "insert into emp_info(emp1_name,type_1,title_1,city_1,state_1,country_1,emp1_mm_from,emp1_yyyy_from,emp1_mm_to,emp1_yyyy_to,describe_1) values (@emp1name,@type1,@title1,@city1,@state1,@country1,@mmfrom1,@yyfrom1,@mmto1,@yyto1,@describe1)";
 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
 (InsertCommand, myConnection); 
         cmd.Parameters.Add("@emp1name", System.Data.SqlDbType.NChar, 100).Value = emp1_name;
@@ -77,7 +77,7 @@ string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog 
         myConnection.Open();
 
 //insert function
-        string InsertCommand = "insert into STU_INFO (emp1_name,type_1,title_1,city_1,state_1,country_1,emp1_mm_from,emp1_yyyy_from,emp1_mm_to,emp1_yyyy_to,describe_1) values (@emp1name,@type1,@title1,@city1,@state1,@country1,@mmfrom1,@yyfrom1,@mmto1,@yyto1,@describe1)";
+        string InsertCommand = "insert into emp_info(emp1_name,type_1,title_1,city_1,state_1,country_1,emp1_mm_from,emp1_yyyy_from,emp1_mm_to,emp1_yyyy_to,describe_1) values (@emp1name,@type1,@title1,@city1,@state1,@country1,@mmfrom1,@yyfrom1,@mmto1,@yyto1,@describe1)";
 System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
 (InsertCommand, myConnection); 
         cmd.Parameters.Add("@emp1name", System.Data.SqlDbType.NChar, 100).Value = emp1_name;
@@ -115,7 +115,7 @@ System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
         myConnection.Open();
 
         //insert function
-        string InsertCommand = "insert into STU_INFO (emp1_name,type_1,title_1,city_1,state_1,country_1,emp1_mm_from,emp1_yyyy_from,emp1_mm_to,emp1_yyyy_to,describe_1) values (@emp1name,@type1,@title1,@city1,@state1,@country1,@mmfrom1,@yyfrom1,@mmto1,@yyto1,@describe1)";
+        string InsertCommand = "insert into emp_info(emp1_name,type_1,title_1,city_1,state_1,country_1,emp1_mm_from,emp1_yyyy_from,emp1_mm_to,emp1_yyyy_to,describe_1) values (@emp1name,@type1,@title1,@city1,@state1,@country1,@mmfrom1,@yyfrom1,@mmto1,@yyto1,@describe1)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
         (InsertCommand, myConnection);
         cmd.Parameters.Add("@emp1name", System.Data.SqlDbType.NChar, 100).Value = emp1_name;
