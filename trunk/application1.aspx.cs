@@ -14,10 +14,10 @@ using System.Xml.Linq;
 
 public partial class application1 : System.Web.UI.Page
 {
-
+    int ruid = 3;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
     protected void nextpage_Click(object sender, EventArgs e)
     {
@@ -32,13 +32,13 @@ public partial class application1 : System.Web.UI.Page
         string area0 = area.Text;
         string faculty0 = faculty.Text;
         string othercollege = otherschool.Text;
-        string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-
-        string InsertCommand = "insert into program_info(college_name,college_campus,college_school,college_program,objective,entry_term,status,area0,faculty0,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection); 
+        string InsertCommand = "insert into program_info(ruid,college_name,college_campus,college_school,college_program,objective,entry_term,status,area0,faculty0,otherschool) values (@ruid,@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
+        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection);
+        cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = college_name;
         cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = college_campus;
         cmd.Parameters.Add("@gradschool", System.Data.SqlDbType.NChar, 100).Value = college_school;
@@ -70,10 +70,10 @@ public partial class application1 : System.Web.UI.Page
         string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
-
-
-        string InsertCommand = "insert into program_info(college_name,college_campus,college_school,college_program,objective,entry_term,status,area0,faculty0,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
+        
+        string InsertCommand = "insert into program_info(ruid,college_name,college_campus,college_school,college_program,objective,entry_term,status,area0,faculty0,otherschool) values (@ruid,@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection);
+        cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;        
         cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = college_name;
         cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = college_campus;
         cmd.Parameters.Add("@gradschool", System.Data.SqlDbType.NChar, 100).Value = college_school;
