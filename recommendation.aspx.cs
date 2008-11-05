@@ -15,6 +15,7 @@ using System.Xml.Linq;
 public partial class recommendation : System.Web.UI.Page
 {
     int ruid = 3;
+    int app_id = 1;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -34,10 +35,11 @@ public partial class recommendation : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //insert function
-        string InsertCommand = "insert into recommend(ruid,rec1fname,rec1lname,rec1org,rec1phone,rec1add,rec1email,rec1online) values (@ruid,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        string InsertCommand = "insert into recommend(ruid,app_id,rec1_fname,rec1_lname,rec1_org,rec1_phone,rec1_add,rec1_email,rec1_online) values (@ruid,@app_id,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (InsertCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
+        cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;
         cmd.Parameters.Add("@rec1_lname", System.Data.SqlDbType.NChar, 20).Value = rec1lname;
         cmd.Parameters.Add("@rec1_org", System.Data.SqlDbType.NChar, 100).Value = rec1org;
@@ -69,10 +71,11 @@ public partial class recommendation : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //insert function
-        string InsertCommand = "insert into recommend(ruid,rec1fname,rec1lname,rec1org,rec1phone,rec1add,rec1email,rec1online) values (@ruid,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        string InsertCommand = "insert into recommend(ruid,app_id,rec1_fname,rec1_lname,rec1_org,rec1_phone,rec1_add,rec1_email,rec1_online) values (@ruid,@app_id,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (InsertCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
+        cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;
         cmd.Parameters.Add("@rec1_lname", System.Data.SqlDbType.NChar, 20).Value = rec1lname;
         cmd.Parameters.Add("@rec1_org", System.Data.SqlDbType.NChar, 100).Value = rec1org;
