@@ -37,15 +37,15 @@ public partial class application1 : System.Web.UI.Page
         myConnection.Open();
 
 
-        string InsertCommand = "insert into program_info(collegename,campus,gradschool,program,enrollobj,entryterm,fullorhalf,area,faculty,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
+        string InsertCommand = "insert into program_info(college_name,college_campus,college_school,college_program,objective,entry_term,status,area0,faculty0,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection); 
-        cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = collegename;
-        cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = campus;
-        cmd.Parameters.Add("@gradschool", System.Data.SqlDbType.NChar, 100).Value = gradschool;
-        cmd.Parameters.Add("@program", System.Data.SqlDbType.NChar, 100).Value = program;
-        cmd.Parameters.Add("@enrollobj", System.Data.SqlDbType.NChar, 10).Value = enrollobj;
-        cmd.Parameters.Add("@entryterm", System.Data.SqlDbType.NChar, 20).Value = entryterm;
-        cmd.Parameters.Add("@fullorhalf", System.Data.SqlDbType.NChar, 50).Value = fullorhalf;
+        cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = college_name;
+        cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = college_campus;
+        cmd.Parameters.Add("@gradschool", System.Data.SqlDbType.NChar, 100).Value = college_school;
+        cmd.Parameters.Add("@program", System.Data.SqlDbType.NChar, 100).Value = college_program;
+        cmd.Parameters.Add("@enrollobj", System.Data.SqlDbType.NChar, 10).Value = objective;
+        cmd.Parameters.Add("@entryterm", System.Data.SqlDbType.NChar, 20).Value = entry_term;
+        cmd.Parameters.Add("@fullorhalf", System.Data.SqlDbType.NChar, 50).Value = status;
         cmd.Parameters.Add("@area", System.Data.SqlDbType.NChar, 50).Value = area0;
         cmd.Parameters.Add("@faculty", System.Data.SqlDbType.Text).Value = faculty0;
         cmd.Parameters.Add("@otherschool", System.Data.SqlDbType.Text).Value = othercollege;
@@ -67,22 +67,20 @@ public partial class application1 : System.Web.UI.Page
         string area0 = area.Text;
         string faculty0 = faculty.Text;
         string othercollege = otherschool.Text;
-        //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
         string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        //insert function
-        string InsertCommand = "insert into program_info(collegename,campus,gradschool,program,enrollobj,entryterm,fullorhalf,area,faculty,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-        (InsertCommand, myConnection);
-        cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = collegename;
-        cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = campus;
-        cmd.Parameters.Add("@gradschool", System.Data.SqlDbType.NChar, 100).Value = gradschool;
-        cmd.Parameters.Add("@program", System.Data.SqlDbType.NChar, 100).Value = program;
-        cmd.Parameters.Add("@enrollobj", System.Data.SqlDbType.NChar, 10).Value = enrollobj;
-        cmd.Parameters.Add("@entryterm", System.Data.SqlDbType.NChar, 20).Value = entryterm;
-        cmd.Parameters.Add("@fullorhalf", System.Data.SqlDbType.NChar, 50).Value = fullorhalf;
+
+        string InsertCommand = "insert into program_info(college_name,college_campus,college_school,college_program,objective,entry_term,status,area0,faculty0,otherschool) values (@collegename,@campus,@gradschool,@program,@enrollobj,@entryterm,@fullorhalf,@area,@faculty,@otherschool)";
+        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection);
+        cmd.Parameters.Add("@collegename", System.Data.SqlDbType.NChar, 100).Value = college_name;
+        cmd.Parameters.Add("@campus", System.Data.SqlDbType.NChar, 100).Value = college_campus;
+        cmd.Parameters.Add("@gradschool", System.Data.SqlDbType.NChar, 100).Value = college_school;
+        cmd.Parameters.Add("@program", System.Data.SqlDbType.NChar, 100).Value = college_program;
+        cmd.Parameters.Add("@enrollobj", System.Data.SqlDbType.NChar, 10).Value = objective;
+        cmd.Parameters.Add("@entryterm", System.Data.SqlDbType.NChar, 20).Value = entry_term;
+        cmd.Parameters.Add("@fullorhalf", System.Data.SqlDbType.NChar, 50).Value = status;
         cmd.Parameters.Add("@area", System.Data.SqlDbType.NChar, 50).Value = area0;
         cmd.Parameters.Add("@faculty", System.Data.SqlDbType.Text).Value = faculty0;
         cmd.Parameters.Add("@otherschool", System.Data.SqlDbType.Text).Value = othercollege;
