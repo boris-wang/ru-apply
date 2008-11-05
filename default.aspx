@@ -10,7 +10,31 @@
 
     protected void UserLogin(object sender, EventArgs e)
     {
+        //input these three info in the testboxs
+        string USERNAME = TextBox1.Text;
+        string PASSWORD = TextBox2.Text;
+        
+        //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
+        string MysqlConnection = "Data Source=jordan\\SQLEXPRESS;Initial Catalog=RegisteredUsers;Integrated Security=True";
+        System.Data.SqlClient.SqlConnection myConnection = new System.Data.SqlClient.SqlConnection(MysqlConnection);
+        myConnection.Open();
 
+        //insert function
+        string SelectCommand = "SELECT password FROM login_db WHERE (username = @USERNAME)";
+        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(SelectCommand, myConnection);
+        cmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
+
+        string passwordfromdb = (string) cmd.ExecuteScalar();
+
+        if (PASSWORD == passwordfromdb)
+            Response.Redirect("myaccount.aspx");
+        else
+            Label1.Text = "Invalid username or password. Please try again.";
+
+        //cmd.ExecuteNonQuery();
+
+        myConnection.Close();
+        //Response.Redirect("usercreateconf.aspx");
     }
 </script>
 
@@ -42,19 +66,38 @@
   </div>
   <div id="mainContent">
 <h1>Your Future, Starts Here.</h1>
-      <p align=center><div align="center">
-          <asp:Login ID="Login1" runat="server" BackColor="#FFFBD6" BorderColor="#FFDFAD" 
-              BorderPadding="4" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-              Font-Size="0.8em" ForeColor="#333333" DisplayRememberMe="False" 
-              LoginButtonText="Login" style="text-align: center" 
-              UserNameLabelText="Username:" TitleText="Experience the Convenience">
-              <TextBoxStyle Font-Size="0.8em" />
-              <LoginButtonStyle BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" 
-                  BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" />
-              <InstructionTextStyle Font-Italic="True" ForeColor="Black" Wrap="True" />
-              <TitleTextStyle BackColor="#D21033" Font-Bold="True" Font-Size="0.9em" 
-                  ForeColor="White" />
-          </asp:Login></div>
+      <p align=center>
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        Username:</td>
+                    <td>
+                        <asp:TextBox ID="TextBox1" runat="server" ValidationGroup="userandpass"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                            ControlToValidate="TextBox1" ErrorMessage="Required." 
+                            ValidationGroup="userandpass"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:</td>
+                    <td>
+                        <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="userandpass" 
+                            TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                            ControlToValidate="TextBox2" ErrorMessage="Required." 
+                            ValidationGroup="userandpass"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+                        <br />
+                        <asp:Button ID="Button1" runat="server" onclick="UserLogin" Text="Login" 
+                            ValidationGroup="userandpass" />
+                    </td>
+                </tr>
+            </table>
       </p>
       <p align=center>
           <table cellpadding="0" cellspacing="0" width="100%">
