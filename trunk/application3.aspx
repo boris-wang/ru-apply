@@ -5,6 +5,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Apply For Program - Step 3</title>
 <link href="generic.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .style1
+        {
+            font-size: small;
+            font-weight: bold;
+        }
+        .style2
+        {
+            font-size: small;
+        }
+    </style>
 </head>
 <body class="oneColElsCtrHdr">
 
@@ -20,8 +31,8 @@
   <h1>Supplemental Section</h1>
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF" id="uploaddoc">
       <tr>
-        <td width="50%" height="40" colspan="2"><strong><u>Statement of 
-            Purpose</u></strong><br /><br /><i>To upload a document in response to this question, please click the &quot;Upload&quot; 
+        <td width="50%" height="40" colspan="2"><u><span class="style1">Statement of 
+            Purpose</span></u><br /><br /><i>To upload a document in response to this question, please click the &quot;Upload&quot; 
             button below. If your upload is successful, you will see a &quot;View Document&quot; 
             button and a &quot;Delete&quot; button appear next to the question.</i></td>
       </tr>
@@ -38,11 +49,19 @@
                 Visible="False" />
             <br />
             <br />
+            <asp:Button ID="Button3" runat="server" onclick="Button3_Click" 
+                Text="Delete Statement of Purpose" Visible="False" />
+            <br />
+            <br />
             <asp:Label ID="Label1" runat="server" Text=" "></asp:Label>
+            <br />
+            <br />
+            <br />
+            <br />
           </td>
       </tr>
       <tr>
-        <td height="40" colspan="2"><strong><u>Resume</u></strong><br /><br />To upload a 
+        <td height="40" colspan="2"><strong><u><span class="style2">Resume</span></u></strong><br /><br />To upload a 
             document in response to this question, please click the &quot;Upload&quot; button below. 
             If your upload is successful, you will see a &quot;View Document&quot; button and a 
             &quot;Delete&quot; button appear next to the question.</i></td>
@@ -60,11 +79,20 @@
                 Visible="False" />
             <br />
             <br />
+            <asp:Button ID="Button4" runat="server" onclick="Button4_Click" 
+                Text="Delete Resume" Visible="False" />
+            <br />
+            <br />
             <asp:Label ID="Label2" runat="server" Text=" "></asp:Label>
+            <br />
+            <br />
+            <br />
+            <br />
           </td>
       </tr>
       <tr>
-        <td height="40" ><strong><u>Assistantship</u></strong></td></tr><tr><td>
+        <td height="40" class="style2" ><strong><u><span class="style2">Assistantship</span><br />
+            </u></strong></td></tr><tr><td>
         Do you wish to be considered for an 
             assistantship?</td>
         <td width="50%" height="40"><label>
