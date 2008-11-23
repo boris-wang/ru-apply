@@ -86,9 +86,9 @@ public partial class application3 : System.Web.UI.Page
         {
             Boolean fileOK = false;
             String path = Server.MapPath("~/UploadedFiles/");
-            if (FileUpload1.HasFile)
+            if (FileUpload2.HasFile)
             {
-                String fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
+                String fileExtension = System.IO.Path.GetExtension(FileUpload2.FileName).ToLower();
                 String[] allowedExtensions = { ".doc", ".docx", ".pdf", ".txt" };
                 for (int i = 0; i < allowedExtensions.Length; i++)
                 {
@@ -103,8 +103,8 @@ public partial class application3 : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload1.PostedFile.SaveAs("F:\\下载\\"
-                    + FileUpload1.FileName);
+                    FileUpload2.PostedFile.SaveAs("F:\\下载\\"
+                    + FileUpload2.FileName);
                     Label2.Text = "File uploaded!";
                 }
                 catch (Exception ex)
