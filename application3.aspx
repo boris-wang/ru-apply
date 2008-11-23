@@ -27,8 +27,18 @@
       </tr>
       <tr>
         <td height="40" colspan="2">
-            <asp:Button ID="uploadPS" runat="server" style="text-align: center" 
+            <asp:Button ID="uploadPS" runat="server" style="text-align: center; width: 320px;" 
                 Text="Upload Statement of Purpose" onclick="uploadPS_Click" />
+            <br />
+            <br />
+            <asp:FileUpload ID="FileUpload1" runat="server" Visible="False" />
+&nbsp;<br />
+            <br />
+            <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Confirm" 
+                Visible="False" />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text=" "></asp:Label>
           </td>
       </tr>
       <tr>
@@ -40,7 +50,17 @@
       <tr>
         <td height="40" colspan="2">
             <asp:Button ID="uploadResume" runat="server" style="text-align: center" 
-                Text="Upload Resume" />
+                Text="Upload Resume" onclick="uploadResume_Click" />
+            <br />
+            <br />
+            <asp:FileUpload ID="FileUpload2" runat="server" Visible="False" />
+            <br />
+            <br />
+            <asp:Button ID="Button2" runat="server" onclick="Button2_Click" Text="Confirm" 
+                Visible="False" />
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text=" "></asp:Label>
           </td>
       </tr>
       <tr>
