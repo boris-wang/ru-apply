@@ -63,7 +63,7 @@ public partial class application3 : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload1.PostedFile.SaveAs("F:\\下载\\"
+                    FileUpload1.PostedFile.SaveAs("F:\\下载\\try\\ps\\"
                     + FileUpload1.FileName);
                     Label1.Text = "File uploaded!";
                 }
@@ -78,7 +78,9 @@ public partial class application3 : System.Web.UI.Page
             }
         }
         FileUpload1.Visible = false;
-        Button1.Visible = false; 
+        Button1.Visible = false;
+        Button3.Visible = true;
+        uploadPS.Enabled = false;
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
@@ -103,7 +105,7 @@ public partial class application3 : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload2.PostedFile.SaveAs("F:\\下载\\"
+                    FileUpload2.PostedFile.SaveAs("F:\\下载\\try\\resume\\"
                     + FileUpload2.FileName);
                     Label2.Text = "File uploaded!";
                 }
@@ -118,6 +120,28 @@ public partial class application3 : System.Web.UI.Page
             }
         }
         FileUpload2.Visible = false;
-        Button2.Visible = false; 
+        Button2.Visible = false;
+        Button4.Visible = true;
+        uploadResume.Enabled = false;
+    }
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        foreach (string filename in System.IO.Directory.GetFiles("F:\\下载\\try\\ps\\"))
+        {
+            System.IO.File.Delete(filename);
+        }
+        uploadPS.Enabled = true;
+        Label1.Text = "There is no PS uploaded.";
+        Button3.Visible = false;
+    }
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        foreach (string filename in System.IO.Directory.GetFiles("F:\\下载\\try\\resume\\"))
+        {
+            System.IO.File.Delete(filename);
+        }
+        uploadResume.Enabled=true; 
+        Label2.Text = "There is no Resume uploaded.";
+        Button4.Visible = false;
     }
 }
