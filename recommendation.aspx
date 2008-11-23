@@ -26,12 +26,27 @@
         <td width="50%" height="40">
             <asp:TextBox ID="rec1_fname" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
           &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="rec1_fname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator13" 
+                runat="server" ControlToValidate="rec1_fname" 
+                ErrorMessage="The input should be 1~20 characters." 
+                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec1_lname" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="rec1_lname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator14" 
+                runat="server" ControlToValidate="rec1_lname" 
+                ErrorMessage="The input should be 1~20 characters." 
+                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
@@ -56,6 +71,14 @@
         <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec1_email" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                ControlToValidate="rec1_email" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator15" 
+                runat="server" ControlToValidate="rec1_email" 
+                ErrorMessage="Must be a valid email address." 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
@@ -65,6 +88,8 @@
         <asp:ListItem Selected="True">Yes</asp:ListItem>
         <asp:ListItem>No</asp:ListItem>
     </asp:RadioButtonList>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+        ControlToValidate="rec1_online" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
@@ -74,12 +99,27 @@
         <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec2_fname" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                ControlToValidate="rec2_fname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator16" 
+                runat="server" ControlToValidate="rec2_fname" 
+                ErrorMessage="The input should be 1~20 characters." 
+                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec2_lname" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                ControlToValidate="rec2_lname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator17" 
+                runat="server" ErrorMessage="The input should be 1~20 characters." 
+                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
@@ -104,6 +144,14 @@
         <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec2_email" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                ControlToValidate="rec2_email" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator18" 
+                runat="server" ControlToValidate="rec2_email" 
+                ErrorMessage="Must be a valid email address." 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
@@ -113,6 +161,8 @@
         <asp:ListItem Selected="True">Yes</asp:ListItem>
         <asp:ListItem>No</asp:ListItem>
     </asp:RadioButtonList>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+        ControlToValidate="rec2_online" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
@@ -122,12 +172,28 @@
         <td width="50%" height="40"><p align="right">*First Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec3_fname" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                ControlToValidate="rec3_fname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator19" 
+                runat="server" ControlToValidate="rec3_fname" 
+                ErrorMessage="The input should be 1~20 characters." 
+                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec3_lname" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                ControlToValidate="rec3_lname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator20" 
+                runat="server" ControlToValidate="rec3_lname" 
+                ErrorMessage="The input should be 1~20 characters." 
+                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
@@ -152,6 +218,14 @@
         <td width="50%" height="40"><p align="right">*Email</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="rec3_email" runat="server"></asp:TextBox>
+          &nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
+                ControlToValidate="rec3_email" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
+            <br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator21" 
+                runat="server" ControlToValidate="rec3_email" 
+                ErrorMessage="Must be a valid email address." 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
@@ -161,6 +235,8 @@
         <asp:ListItem Selected="True">Yes</asp:ListItem>
         <asp:ListItem>No</asp:ListItem>
     </asp:RadioButtonList>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" 
+        ControlToValidate="rec3_online" ErrorMessage="* Required Field"></asp:RequiredFieldValidator>
           </td>
       </tr>
         &nbsp;</td>

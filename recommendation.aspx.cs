@@ -11,6 +11,9 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.Web.Mail;
+using System.Text;
+
 
 public partial class recommendation : System.Web.UI.Page
 {
@@ -54,7 +57,36 @@ public partial class recommendation : System.Web.UI.Page
     }
     protected void submit_Click(object sender, EventArgs e)
     {
+        MailMessage mail = new MailMessage();
+        mail.To = "jt_tony_5@hotmail.com";
+        mail.From = "ruapplysystem@gmail.com";
+        mail.Subject = "null";
+        mail.Body = "your decision";
 
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
+
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
+        mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
+
+        SmtpMail.SmtpServer = "smtp.gmail.com";
+        SmtpMail.Send(mail);
+
+        //try
+        //{
+        //  SmtpMail.SmtpServer = "smtp.gmail.com";
+        //SmtpMail.Send(mail);
+        //Label2.Text = "Successful sent！";
+        //}
+        //catch (Exception ex)
+        //{
+        //Console.WriteLine(ex.ToString());
+        //Label2.Text="Email cannot be sent, please contact the administrater!"; 
+        //} 
     }
     protected void save_Click(object sender, EventArgs e)
     {
