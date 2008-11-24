@@ -76,6 +76,8 @@ public partial class recommendation : System.Web.UI.Page
         SmtpMail.SmtpServer = "smtp.gmail.com";
         SmtpMail.Send(mail);
 
+        //*******Codes above are comments newly added.*******
+        //*******Codes below was comments previously.********
         //try
         //{
         //  SmtpMail.SmtpServer = "smtp.gmail.com";

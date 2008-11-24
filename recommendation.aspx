@@ -249,7 +249,7 @@
             <asp:Button ID="save" runat="server" Text="Save" onclick="save_Click" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="submit" runat="server" Text="Submit" onclick="submit_Click" />
-            </div></td>
+            &nbsp;&nbsp; <a href="app_prew.aspx" target=_blank>Preview</a></div></td>
         </tr>
     </table>
       </form>
