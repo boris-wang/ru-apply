@@ -42,6 +42,10 @@ public partial class recommenderform : System.Web.UI.Page
                     FileUpload1.PostedFile.SaveAs("F:\\下载\\try\\rec\\"
                     + FileUpload1.FileName);
                     Label1.Text = "File uploaded!";
+                    FileUpload1.Visible = false;
+                    Button2.Visible = false;
+                    Button3.Visible = true;
+                    Button1.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -53,10 +57,6 @@ public partial class recommenderform : System.Web.UI.Page
                 Label1.Text = "Cannot accept files of this type.";
             }
         }
-        FileUpload1.Visible = false;
-        Button2.Visible = false;
-        Button3.Visible = true;
-        Button1.Enabled = false;
     }
     protected void Button3_Click(object sender, EventArgs e)
     {
