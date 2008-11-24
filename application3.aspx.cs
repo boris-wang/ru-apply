@@ -66,6 +66,10 @@ public partial class application3 : System.Web.UI.Page
                     FileUpload1.PostedFile.SaveAs("F:\\下载\\try\\ps\\"
                     + FileUpload1.FileName);
                     Label1.Text = "File uploaded!";
+                    FileUpload1.Visible = false;
+                    Button1.Visible = false;
+                    Button3.Visible = true;
+                    uploadPS.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -77,10 +81,6 @@ public partial class application3 : System.Web.UI.Page
                 Label1.Text = "Cannot accept files of this type.";
             }
         }
-        FileUpload1.Visible = false;
-        Button1.Visible = false;
-        Button3.Visible = true;
-        uploadPS.Enabled = false;
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
@@ -108,6 +108,10 @@ public partial class application3 : System.Web.UI.Page
                     FileUpload2.PostedFile.SaveAs("F:\\下载\\try\\resume\\"
                     + FileUpload2.FileName);
                     Label2.Text = "File uploaded!";
+                    FileUpload2.Visible = false;
+                    Button2.Visible = false;
+                    Button4.Visible = true;
+                    uploadResume.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -119,10 +123,6 @@ public partial class application3 : System.Web.UI.Page
                 Label2.Text = "Cannot accept files of this type.";
             }
         }
-        FileUpload2.Visible = false;
-        Button2.Visible = false;
-        Button4.Visible = true;
-        uploadResume.Enabled = false;
     }
     protected void Button3_Click(object sender, EventArgs e)
     {
