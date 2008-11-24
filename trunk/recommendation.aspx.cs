@@ -15,7 +15,7 @@ using System.Text;
 public partial class recommendation : System.Web.UI.Page
 {
     int ruid = 3;
-    int app_id = 1;
+    int app_id = 3;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -30,14 +30,28 @@ public partial class recommendation : System.Web.UI.Page
         string rec1add = rec1_add.Text;
         string rec1email = rec1_email.Text;
         string rec1online = rec1_online.Text;
+        string rec2fname = rec2_fname.Text;
+        string rec2lname = rec2_lname.Text;
+        string rec2org = rec2_org.Text;
+        string rec2phone = rec2_phone.Text;
+        string rec2add = rec2_add.Text;
+        string rec2email = rec2_email.Text;
+        string rec2online = rec2_online.Text;
+        string rec3fname = rec3_fname.Text;
+        string rec3lname = rec3_lname.Text;
+        string rec3org = rec3_org.Text;
+        string rec3phone = rec3_phone.Text;
+        string rec3add = rec3_add.Text;
+        string rec3email = rec3_email.Text;
+        string rec3online = rec3_online.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
         string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
-        //insert function
-        string InsertCommand = "insert into recommend(ruid,app_id,rec1_fname,rec1_lname,rec1_org,rec1_phone,rec1_add,rec1_email,rec1_online) values (@ruid,@app_id,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        //update function
+        string updateCommand = "update into recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-            (InsertCommand, myConnection);
+            (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;
@@ -47,6 +61,20 @@ public partial class recommendation : System.Web.UI.Page
         cmd.Parameters.Add("@rec1_add", System.Data.SqlDbType.NChar, 100).Value = rec1add;
         cmd.Parameters.Add("@rec1_email", System.Data.SqlDbType.NChar, 50).Value = rec1email;
         cmd.Parameters.Add("@rec1_online", System.Data.SqlDbType.NChar, 10).Value = rec1online;
+        cmd.Parameters.Add("@rec2_fname", System.Data.SqlDbType.NChar, 20).Value = rec2fname;
+        cmd.Parameters.Add("@rec2_lname", System.Data.SqlDbType.NChar, 20).Value = rec2lname;
+        cmd.Parameters.Add("@rec2_org", System.Data.SqlDbType.NChar, 100).Value = rec2org;
+        cmd.Parameters.Add("@rec2_phone", System.Data.SqlDbType.NChar, 20).Value = rec2phone;
+        cmd.Parameters.Add("@rec2_add", System.Data.SqlDbType.NChar, 100).Value = rec2add;
+        cmd.Parameters.Add("@rec2_email", System.Data.SqlDbType.NChar, 50).Value = rec2email;
+        cmd.Parameters.Add("@rec2_online", System.Data.SqlDbType.NChar, 10).Value = rec2online;
+        cmd.Parameters.Add("@rec3_fname", System.Data.SqlDbType.NChar, 20).Value = rec3fname;
+        cmd.Parameters.Add("@rec3_lname", System.Data.SqlDbType.NChar, 20).Value = rec3lname;
+        cmd.Parameters.Add("@rec3_org", System.Data.SqlDbType.NChar, 100).Value = rec3org;
+        cmd.Parameters.Add("@rec3_phone", System.Data.SqlDbType.NChar, 20).Value = rec3phone;
+        cmd.Parameters.Add("@rec3_add", System.Data.SqlDbType.NChar, 100).Value = rec3add;
+        cmd.Parameters.Add("@rec3_email", System.Data.SqlDbType.NChar, 50).Value = rec3email;
+        cmd.Parameters.Add("@rec3_online", System.Data.SqlDbType.NChar, 10).Value = rec3online;
         cmd.ExecuteNonQuery();
         myConnection.Close();
         Response.Write("Processing...");
@@ -94,14 +122,28 @@ public partial class recommendation : System.Web.UI.Page
         string rec1add = rec1_add.Text;
         string rec1email = rec1_email.Text;
         string rec1online = rec1_online.Text;
+        string rec2fname = rec2_fname.Text;
+        string rec2lname = rec2_lname.Text;
+        string rec2org = rec2_org.Text;
+        string rec2phone = rec2_phone.Text;
+        string rec2add = rec2_add.Text;
+        string rec2email = rec2_email.Text;
+        string rec2online = rec2_online.Text;
+        string rec3fname = rec3_fname.Text;
+        string rec3lname = rec3_lname.Text;
+        string rec3org = rec3_org.Text;
+        string rec3phone = rec3_phone.Text;
+        string rec3add = rec3_add.Text;
+        string rec3email = rec3_email.Text;
+        string rec3online = rec3_online.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
         string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
-        //insert function
-        string InsertCommand = "insert into recommend(ruid,app_id,rec1_fname,rec1_lname,rec1_org,rec1_phone,rec1_add,rec1_email,rec1_online) values (@ruid,@app_id,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        //update function
+        string updateCommand = "update into recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-            (InsertCommand, myConnection);
+            (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;
@@ -111,6 +153,20 @@ public partial class recommendation : System.Web.UI.Page
         cmd.Parameters.Add("@rec1_add", System.Data.SqlDbType.NChar, 100).Value = rec1add;
         cmd.Parameters.Add("@rec1_email", System.Data.SqlDbType.NChar, 50).Value = rec1email;
         cmd.Parameters.Add("@rec1_online", System.Data.SqlDbType.NChar, 10).Value = rec1online;
+        cmd.Parameters.Add("@rec2_fname", System.Data.SqlDbType.NChar, 20).Value = rec2fname;
+        cmd.Parameters.Add("@rec2_lname", System.Data.SqlDbType.NChar, 20).Value = rec2lname;
+        cmd.Parameters.Add("@rec2_org", System.Data.SqlDbType.NChar, 100).Value = rec2org;
+        cmd.Parameters.Add("@rec2_phone", System.Data.SqlDbType.NChar, 20).Value = rec2phone;
+        cmd.Parameters.Add("@rec2_add", System.Data.SqlDbType.NChar, 100).Value = rec2add;
+        cmd.Parameters.Add("@rec2_email", System.Data.SqlDbType.NChar, 50).Value = rec2email;
+        cmd.Parameters.Add("@rec2_online", System.Data.SqlDbType.NChar, 10).Value = rec2online;
+        cmd.Parameters.Add("@rec3_fname", System.Data.SqlDbType.NChar, 20).Value = rec3fname;
+        cmd.Parameters.Add("@rec3_lname", System.Data.SqlDbType.NChar, 20).Value = rec3lname;
+        cmd.Parameters.Add("@rec3_org", System.Data.SqlDbType.NChar, 100).Value = rec3org;
+        cmd.Parameters.Add("@rec3_phone", System.Data.SqlDbType.NChar, 20).Value = rec3phone;
+        cmd.Parameters.Add("@rec3_add", System.Data.SqlDbType.NChar, 100).Value = rec3add;
+        cmd.Parameters.Add("@rec3_email", System.Data.SqlDbType.NChar, 50).Value = rec3email;
+        cmd.Parameters.Add("@rec3_online", System.Data.SqlDbType.NChar, 10).Value = rec3online;
         cmd.ExecuteNonQuery();
         myConnection.Close();
         Response.Write("Processing...");
@@ -126,14 +182,28 @@ public partial class recommendation : System.Web.UI.Page
         string rec1add = rec1_add.Text;
         string rec1email = rec1_email.Text;
         string rec1online = rec1_online.Text;
+        string rec2fname = rec2_fname.Text;
+        string rec2lname = rec2_lname.Text;
+        string rec2org = rec2_org.Text;
+        string rec2phone = rec2_phone.Text;
+        string rec2add = rec2_add.Text;
+        string rec2email = rec2_email.Text;
+        string rec2online = rec2_online.Text;
+        string rec3fname = rec3_fname.Text;
+        string rec3lname = rec3_lname.Text;
+        string rec3org = rec3_org.Text;
+        string rec3phone = rec3_phone.Text;
+        string rec3add = rec3_add.Text;
+        string rec3email = rec3_email.Text;
+        string rec3online = rec3_online.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
         string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
-        //insert function
-        string InsertCommand = "insert into recommend(ruid,app_id,rec1_fname,rec1_lname,rec1_org,rec1_phone,rec1_add,rec1_email,rec1_online) values (@ruid,@app_id,@rec1_fname,@rec1_lname,@rec1_org,@rec1_phone,@rec1_add,@rec1_email,@rec1_online)";
+        //update function
+        string updateCommand = "update into recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-            (InsertCommand, myConnection);
+            (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@rec1_fname", System.Data.SqlDbType.NChar, 20).Value = rec1fname;
@@ -143,6 +213,20 @@ public partial class recommendation : System.Web.UI.Page
         cmd.Parameters.Add("@rec1_add", System.Data.SqlDbType.NChar, 100).Value = rec1add;
         cmd.Parameters.Add("@rec1_email", System.Data.SqlDbType.NChar, 50).Value = rec1email;
         cmd.Parameters.Add("@rec1_online", System.Data.SqlDbType.NChar, 10).Value = rec1online;
+        cmd.Parameters.Add("@rec2_fname", System.Data.SqlDbType.NChar, 20).Value = rec2fname;
+        cmd.Parameters.Add("@rec2_lname", System.Data.SqlDbType.NChar, 20).Value = rec2lname;
+        cmd.Parameters.Add("@rec2_org", System.Data.SqlDbType.NChar, 100).Value = rec2org;
+        cmd.Parameters.Add("@rec2_phone", System.Data.SqlDbType.NChar, 20).Value = rec2phone;
+        cmd.Parameters.Add("@rec2_add", System.Data.SqlDbType.NChar, 100).Value = rec2add;
+        cmd.Parameters.Add("@rec2_email", System.Data.SqlDbType.NChar, 50).Value = rec2email;
+        cmd.Parameters.Add("@rec2_online", System.Data.SqlDbType.NChar, 10).Value = rec2online;
+        cmd.Parameters.Add("@rec3_fname", System.Data.SqlDbType.NChar, 20).Value = rec3fname;
+        cmd.Parameters.Add("@rec3_lname", System.Data.SqlDbType.NChar, 20).Value = rec3lname;
+        cmd.Parameters.Add("@rec3_org", System.Data.SqlDbType.NChar, 100).Value = rec3org;
+        cmd.Parameters.Add("@rec3_phone", System.Data.SqlDbType.NChar, 20).Value = rec3phone;
+        cmd.Parameters.Add("@rec3_add", System.Data.SqlDbType.NChar, 100).Value = rec3add;
+        cmd.Parameters.Add("@rec3_email", System.Data.SqlDbType.NChar, 50).Value = rec3email;
+        cmd.Parameters.Add("@rec3_online", System.Data.SqlDbType.NChar, 10).Value = rec3online;
         cmd.ExecuteNonQuery();
         myConnection.Close();
         Response.Write("Processing...");
