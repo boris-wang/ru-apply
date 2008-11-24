@@ -189,7 +189,7 @@
         </tr>
       <tr>
         <td height="40" colspan="2"><div align="center">
-            &nbsp;<a href="Application2.aspx"><asp:Button 
+            &nbsp;<asp:Button 
                 ID="save" runat="server" Text="Save" onclick="save_Click" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="nextpage" runat="server" Text="Next Page" 
