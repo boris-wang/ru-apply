@@ -119,7 +119,7 @@
             <br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator17" 
                 runat="server" ErrorMessage="The input should be 1~20 characters." 
-                ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator>
+                ValidationExpression="[A-Za-z]{1,20}$" ControlToValidate="rec2_lname"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
