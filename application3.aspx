@@ -123,7 +123,6 @@
         </tr>
 <tr>
         <td height="40" colspan="2"><div align="center">
-            <a href=recommendation.aspx>
             <asp:Button ID="previouspage" runat="server" Text="Previous Page" 
                 onclick="previouspage_Click" />
 &nbsp;&nbsp;&nbsp;
