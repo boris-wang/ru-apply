@@ -16,7 +16,7 @@
   <div id="mainContent">
   <h1>Account Information</h1>
   <p>Hi,
-      <asp:LoginName ID="LoginName1" runat="server" />, below is a summary of your account.</p>
+      <asp:LoginName ID="username" runat="server" />, below is a summary of your account.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
       <tr>
         <td width="50%" height="40"><strong><u>Personal Profile</u></strong><br /><i>You can 
