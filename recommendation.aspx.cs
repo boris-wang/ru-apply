@@ -54,7 +54,6 @@ public partial class recommendation : System.Web.UI.Page
     }
     protected void submit_Click(object sender, EventArgs e)
     {
-        Response.Write("<script>window.open('application_preview.aspx')</script>");
         /*MailMessage mail = new MailMessage();
         mail.To = "jt_tony_5@hotmail.com";
         mail.From = "ruapplysystem@gmail.com";
@@ -115,6 +114,7 @@ public partial class recommendation : System.Web.UI.Page
         cmd.ExecuteNonQuery();
         myConnection.Close();
         Response.Write("Processing...");
+        Response.Write("<script>window.open('application_preview.aspx')</script>");
     }
     protected void save_Click(object sender, EventArgs e)
     {
