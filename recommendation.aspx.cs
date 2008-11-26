@@ -49,7 +49,7 @@ public partial class recommendation : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update into recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
+        string updateCommand = "update recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -141,7 +141,7 @@ public partial class recommendation : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update into recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
+        string updateCommand = "update recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -201,7 +201,7 @@ public partial class recommendation : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update into recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
+        string updateCommand = "update recommend set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;

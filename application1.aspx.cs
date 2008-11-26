@@ -37,7 +37,7 @@ public partial class application1 : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update into program_info set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid=@ruid";
+        string updateCommand = "update program_info set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -73,7 +73,7 @@ public partial class application1 : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update into program_info set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid=@ruid";
+        string updateCommand = "update program_info set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid=@ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
