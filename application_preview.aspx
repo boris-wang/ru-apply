@@ -268,7 +268,7 @@
       <asp:Button ID="Button1" runat="server" Text="Modify & Close Window" 
           onclick="Button1_Click" />
 &nbsp;&nbsp;&nbsp;
-      <asp:Button ID="Button2" runat="server" Text="Submit" />
+      <asp:Button ID="Button2" runat="server" Text="Submit" onclick="Button2_Click" />
       </td></tr>
     </table>
     <p></p>
