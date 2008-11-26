@@ -203,6 +203,28 @@ string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog 
         string emp1_mm_to = mmto1.Text;
         string emp1_yyyy_to = yyto1.Text;
         string describe_1 = describe1.Text;
+        string emp2_name = emp2name.Text;
+        string type_2 = type2.Text;
+        string title_2 = title2.Text;
+        string city_2 = city2.Text;
+        string state_2 = state2.Text;
+        string country_2 = country2.Text;
+        string emp2_mm_from = mmfrom2.Text;
+        string emp2_yyyy_from = yyfrom2.Text;
+        string emp2_mm_to = mmto2.Text;
+        string emp2_yyyy_to = yyto2.Text;
+        string describe_2 = describe2.Text;
+        string emp3_name = emp3name.Text;
+        string type_3 = type3.Text;
+        string title_3 = title3.Text;
+        string city_3 = city3.Text;
+        string state_3 = state3.Text;
+        string country_3 = country3.Text;
+        string emp3_mm_from = mmfrom3.Text;
+        string emp3_yyyy_from = yyfrom3.Text;
+        string emp3_mm_to = mmto3.Text;
+        string emp3_yyyy_to = yyto3.Text;
+        string describe_3 = describe3.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
         string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
