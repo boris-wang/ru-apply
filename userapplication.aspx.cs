@@ -18,8 +18,8 @@ public partial class userapplication : System.Web.UI.Page
 {
     int ruid = 3;
     int app_id = 3;
-    public static string psname;
-    public static string resumename;
+    public static string psextension;
+    public static string resumeextension;
 
     protected void save1_Click(object sender, EventArgs e)
     {
@@ -360,6 +360,7 @@ public partial class userapplication : System.Web.UI.Page
                     if (fileExtension == allowedExtensions[i])
                     {
                         fileOK = true;
+                        psextension = fileExtension;
                     }
                 }
             }
@@ -368,8 +369,8 @@ public partial class userapplication : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload1.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/ps/"
-                    + FileUpload1.FileName);
+                    FileUpload1.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/ps/ps"
+                    + ruid + psextension);
                     Label1.Text = "File uploaded!";
                     FileUpload1.Visible = false;
                     Confirm1.Visible = false;
@@ -393,7 +394,7 @@ public partial class userapplication : System.Web.UI.Page
         //{
         //    System.IO.File.Delete(filename);
         //}
-        File.Delete("D:/yan/web/ruapply/UploadedFiles/ps/" + psname);
+        File.Delete("D:/yan/web/ruapply/UploadedFiles/ps/ps" + ruid + psextension);
         uploadPS.Enabled = true;
         Label1.Text = "There is no PS uploaded.";
         deleteps.Visible = false;
@@ -418,6 +419,7 @@ public partial class userapplication : System.Web.UI.Page
                     if (fileExtension == allowedExtensions[i])
                     {
                         fileOK = true;
+                        resumeextension = fileExtension;
                     }
                 }
             }
@@ -426,8 +428,8 @@ public partial class userapplication : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload2.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/resume/"
-                    + FileUpload2.FileName);
+                    FileUpload2.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/resume/resume"
+                    + ruid + resumeextension);
                     Label2.Text = "File uploaded!";
                     FileUpload2.Visible = false;
                     Confirm2.Visible = false;
@@ -451,7 +453,7 @@ public partial class userapplication : System.Web.UI.Page
         //{
         //    System.IO.File.Delete(filename);
         //}
-        File.Delete("D:/yan/web/ruapply/UploadedFiles/resume/" + resumename);
+        File.Delete("D:/yan/web/ruapply/UploadedFiles/resume/resume" + ruid + resumeextension);
         uploadResume.Enabled = true;
         Label2.Text = "There is no Resume uploaded.";
         Deleteresume.Visible = false;
