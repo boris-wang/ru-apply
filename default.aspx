@@ -1,41 +1,8 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="default.aspx.cs" Inherits="defaultclass" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script runat="server">
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void UserLogin(object sender, EventArgs e)
-    {
-        //input these three info in the testboxs
-        string USERNAME = TextBox1.Text;
-        string PASSWORD = TextBox2.Text;
-        
-        //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection = "Data Source=jordan\\SQLEXPRESS;Initial Catalog=RegisteredUsers;Integrated Security=True";
-        System.Data.SqlClient.SqlConnection myConnection = new System.Data.SqlClient.SqlConnection(MysqlConnection);
-        myConnection.Open();
-
-        //insert function
-        string SelectCommand = "SELECT password FROM login_db WHERE (username = @USERNAME)";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(SelectCommand, myConnection);
-        cmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
-
-        string passwordfromdb = (string) cmd.ExecuteScalar();
-
-        if (PASSWORD == passwordfromdb)
-            Response.Redirect("myaccount.aspx");
-        else
-            Label1.Text = "Invalid username or password. Please try again.";
-
-        //cmd.ExecuteNonQuery();
-
-        myConnection.Close();
-        //Response.Redirect("usercreateconf.aspx");
-    }
 </script>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,27 +13,19 @@
 </head>
 <body class="oneColElsCtrHdr">
 
-    <form id="form1" runat="server">
-
 <div id="container">
   <div id="header">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td width="240"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td>
-      <td width="476" valign="bottom"><form action="http://www.google.com/cse" id="cse-search-box">
-  <div>
-    <input type="hidden" name="cx" value="012962627509922295016:w8dqnowdvsw" />
-    <input type="hidden" name="ie" value="UTF-8" />
-    <input type="text" name="q" size="31" />
-    <input type="submit" name="sa" value="Search" /></div>
-</form>
-<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
+      <td width="476" valign="bottom">
 </td>
     </tr></table>
   </div>
   <div id="mainContent">
 <h1>Your Future, Starts Here.</h1>
       <p align=center>
+          <form id="form1" runat="server">
             <table style="width:100%;">
                 <tr>
                     <td>
@@ -93,11 +52,12 @@
                     <td colspan="2">
                         <asp:Label ID="Label1" runat="server"></asp:Label>
                         <br />
-                        <asp:Button ID="Button1" runat="server" onclick="UserLogin" Text="Login" 
+                        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Login" 
                             ValidationGroup="userandpass" />
                     </td>
                 </tr>
             </table>
+            </form>
       </p>
       <p align=center>
           <table cellpadding="0" cellspacing="0" width="100%">
