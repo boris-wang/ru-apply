@@ -1,0 +1,19 @@
+Two quick announcements:
+
+1) In your review presentations and written reviews, please make an extra effort to include a significant discussion/critique part as I described during the first lecture.
+
+2) For your orientation, here is the complete list of planned project deadlines:
+
+Oct 9 - Requirements Report (now on Sakai)
+
+Oct 22 - OOA - Architecture and Design Report
+
+Nov 4 - Prototype and Testing Report
+
+Nov 14 - Midterm
+
+Nov 24 - Iteration II Design
+
+Dec 5 - Final Project Presentation
+
+Dec 10 - Final Project Report
