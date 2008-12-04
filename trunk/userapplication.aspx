@@ -168,7 +168,7 @@
             each name with a semicolon(;).<br />
             (300 characters maximum)</td>
         <td height="40">
-            <asp:TextBox ID="faculty" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="faculty" runat="server" TextMode="MultiLine" MaxLength="300"></asp:TextBox>
           </td>
       </tr>
       <tr>
@@ -176,7 +176,8 @@
             separate each school name with a semicolon(;).<br />
             (300 characters maximum)</td>
         <td>
-            <asp:TextBox ID="otherschool" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="otherschool" runat="server" TextMode="MultiLine" 
+                MaxLength="300"></asp:TextBox>
           </td>
       </tr>
         <caption>
@@ -209,31 +210,31 @@
       <tr>
         <td width="50%" height="40"><p align="right">Employer Name</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="emp1name" runat="server"></asp:TextBox>
+            <asp:TextBox ID="emp1name" runat="server" MaxLength="100"></asp:TextBox>
                     </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Type of Industry</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="type1" runat="server" ></asp:TextBox>
+            <asp:TextBox ID="type1" runat="server" MaxLength="100" ></asp:TextBox>
                     </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Job Title</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="title1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="title1" runat="server" MaxLength="100"></asp:TextBox>
                     </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">City</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="city1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="city1" runat="server" MaxLength="50"></asp:TextBox>
                     </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">State</p></td>
         <td width="50%" height="40">
-            <asp:TextBox ID="state1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="state1" runat="server" MaxLength="50"></asp:TextBox>
                     </td>
       </tr>
       <tr>
@@ -242,9 +243,8 @@
             <asp:DropDownList ID="country1" runat="server">
                 <asp:ListItem Selected="True">Select One ...</asp:ListItem>
                 <asp:ListItem>China</asp:ListItem>
-                <asp:ListItem>USA</asp:ListItem>
+                <asp:ListItem>USA </asp:ListItem>
                 <asp:ListItem>India</asp:ListItem>
-                <asp:ListItem></asp:ListItem>
             </asp:DropDownList>
                     </td>
       </tr>
@@ -340,7 +340,7 @@
         <td height="40" align="right">Please describe your job.<br />
             (300 characters maximum)</td>
         <td>
-            <asp:TextBox ID="describe1" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="describe1" runat="server" TextMode="MultiLine" MaxLength="300"></asp:TextBox>
           </td>
       </tr>
       <tr>
@@ -349,15 +349,20 @@
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Employer Name<Employer Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="emp2name" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="emp2name" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Type of Industry</p></td><td width="50%" height="40">
-            <asp:TextBox ID="type2" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="type2" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Job Title</p></td><td width="50%" height="40">
-            <asp:TextBox ID="title2" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="title2" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">City</p></td><td width="50%" height="40">
-            <asp:TextBox ID="city2" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="city2" runat="server" MaxLength="50"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">State</p></td><td width="50%" height="40">
-            <asp:TextBox ID="state2" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="state2" runat="server" MaxLength="50"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Country     <td width="50%" height="40">
                                 <asp:DropDownList ID="country2" runat="server">
                 <asp:ListItem Selected="True">Select One ...</asp:ListItem><asp:ListItem>China</asp:ListItem><asp:ListItem>USA</asp:ListItem><asp:ListItem>India</asp:ListItem><asp:ListItem></asp:ListItem></asp:DropDownList></td></tr><tr>
@@ -372,18 +377,24 @@
       <tr>
         <td height="40" align="right">Please describe your job.<br />
             (300 characters maximum)</td><td>
-            <asp:TextBox ID="describe2" runat="server" TextMode="MultiLine"></asp:TextBox></td></tr><tr>
+            <asp:TextBox ID="describe2" runat="server" 
+                    TextMode="MultiLine" MaxLength="300"></asp:TextBox></td></tr><tr>
         <td height="40" colspan="2"><strong><u>Employment Experience</u> (Skip this section if not applicable.)</strong></td></tr><tr>
         <td width="50%" height="40"><p align="right">Employer Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="emp3name" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="emp3name" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Type of Industry</p></td><td width="50%" height="40">
-            <asp:TextBox ID="type3" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="type3" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Job Title</p></td><td width="50%" height="40">
-            <asp:TextBox ID="title3" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="title3" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">City</p></td><td width="50%" height="40">
-            <asp:TextBox ID="city3" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="city3" runat="server" MaxLength="50"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">State</p></td><td width="50%" height="40">
-            <asp:TextBox ID="state3" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                ID="state3" runat="server" MaxLength="50"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Country</p></td><td width="50%" height="40">
                         <asp:DropDownList ID="country3" runat="server">
                 <asp:ListItem Selected="True">Select One ...</asp:ListItem><asp:ListItem>China</asp:ListItem><asp:ListItem>USA</asp:ListItem><asp:ListItem>India</asp:ListItem><asp:ListItem></asp:ListItem></asp:DropDownList></td></tr><tr>
@@ -399,7 +410,7 @@
         <td height="40" align="right">Please describe your job.<br />
             (300 characters maximum) </td>
         <td>
-            <asp:TextBox ID="describe3" runat="server" TextMode="MultiLine"></asp:TextBox></td></tr><caption>&nbsp;</td> </tr><tr><td 
+            <asp:TextBox ID="describe3" runat="server" TextMode="MultiLine" MaxLength="300"></asp:TextBox></td></tr><caption>&nbsp;</td> </tr><tr><td 
                 colspan="2" height="40"><div align="center"><asp:Button ID="previouspage2" 
                     runat="server" onclick="previouspage2_Click" Text="Previous Page" 
                     CommandArgument="View1" CommandName="SwitchViewByID" />&nbsp;&nbsp;&nbsp; <asp:Button 
@@ -464,8 +475,8 @@
         <td height="40" class="style2" ><strong><u><span class="style2">Assistantship</span><br />
             </u></strong></td></tr><tr><td>
         Do you wish to be considered for an assistantship?</td><td width="50%" height="40"><asp:RadioButtonList 
-                       ID="assistyesorno" runat="server" 
-                       ><asp:ListItem Selected="True">Yes</asp:ListItem><asp:ListItem>No</asp:ListItem></asp:RadioButtonList></td></tr></tr><tr>
+                       ID="assistyesorno" runat="server"  
+                       ><asp:ListItem Selected="True">Yes</asp:ListItem><asp:ListItem>No</asp:ListItem></asp:RadioButtonList></td></tr><tr>
         <td height="40">Please specifiy your preferred type of assignment.</td><td>
             <asp:CheckBox 
                        ID="fellow" runat="server" Text="Fellowship" 
@@ -480,7 +491,7 @@
           </td>
         <td width="50%" height="40">
             <asp:TextBox ID="explainforscholarship" runat="server" 
-                       TextMode="MultiLine"></asp:TextBox></td></tr><caption>&nbsp;</td> </tr><tr><td 
+                       TextMode="MultiLine" MaxLength="300"></asp:TextBox></td></tr><caption>&nbsp;</td> </tr><tr><td 
                       colspan="2" height="40"><div align="center"><asp:Button ID="previouspage3" 
                           runat="server" onclick="previouspage3_Click" Text="Previous Page" 
                           CommandArgument="View2" CommandName="SwitchViewByID" />&nbsp;&nbsp;&nbsp; <asp:Button 
@@ -496,7 +507,8 @@
       <tr>
         <td height="40" colspan="2"><strong><u>Recommendation Provider 1</u></strong></td></tr><tr>
         <td width="50%" height="40"><p align="right">*First Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec1_fname" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec1_fname" runat="server" MaxLength="20"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                 ControlToValidate="rec1_fname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator13" 
@@ -504,7 +516,8 @@
                 ErrorMessage="The input should be 1~20 characters." 
                 ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator></td></tr><tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec1_lname" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec1_lname" runat="server" MaxLength="20"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                 ControlToValidate="rec1_lname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator14" 
@@ -512,13 +525,17 @@
                 ErrorMessage="The input should be 1~20 characters." 
                 ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator></td></tr><tr>
         <td width="50%" height="40"><p align="right">Organization/University</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec1_org" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec1_org" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Phone</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec1_phone" runat="server" ></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec1_phone" runat="server" MaxLength="20" ></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Mailing Address</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec1_add" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec1_add" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">*Email</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec1_email" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec1_email" runat="server" MaxLength="50"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                 ControlToValidate="rec1_email" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator15" 
@@ -531,7 +548,8 @@
         ControlToValidate="rec1_online" ErrorMessage="* Required Field"></asp:RequiredFieldValidator></td></tr><tr>
         <td height="40" colspan="2"><strong><u>Recommendation Provider 2</u></strong></td></tr><tr>
         <td width="50%" height="40"><p align="right">*First Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec2_fname" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec2_fname" runat="server" MaxLength="20"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                 ControlToValidate="rec2_fname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator16" 
@@ -539,20 +557,25 @@
                 ErrorMessage="The input should be 1~20 characters." 
                 ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator></td></tr><tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec2_lname" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec2_lname" runat="server" MaxLength="20"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                 ControlToValidate="rec2_lname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator17" 
                 runat="server" ErrorMessage="The input should be 1~20 characters." 
                 ValidationExpression="[A-Za-z]{1,20}$" ControlToValidate="rec2_lname"></asp:RegularExpressionValidator></td></tr><tr>
         <td width="50%" height="40"><p align="right">Organization/University</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec2_org" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec2_org" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Phone</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec2_phone" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec2_phone" runat="server" MaxLength="20"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Mailing Address</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec2_add" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec2_add" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">*Email</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec2_email" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec2_email" runat="server" MaxLength="50"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                 ControlToValidate="rec2_email" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator18" 
@@ -565,7 +588,8 @@
         ControlToValidate="rec2_online" ErrorMessage="* Required Field"></asp:RequiredFieldValidator></td></tr><tr>
         <td height="40" colspan="2"><strong><u>Recommendation Provider 3</u></strong></td></tr><tr>
         <td width="50%" height="40"><p align="right">*First Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec3_fname" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec3_fname" runat="server" MaxLength="20"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                 ControlToValidate="rec3_fname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator19" 
@@ -573,7 +597,8 @@
                 ErrorMessage="The input should be 1~20 characters." 
                 ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator></td></tr><tr>
         <td width="50%" height="40"><p align="right">*Last Name</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec3_lname" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec3_lname" runat="server" MaxLength="20"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
                 ControlToValidate="rec3_lname" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator20" 
@@ -581,13 +606,17 @@
                 ErrorMessage="The input should be 1~20 characters." 
                 ValidationExpression="[A-Za-z]{1,20}$"></asp:RegularExpressionValidator></td></tr><tr>
         <td width="50%" height="40"><p align="right">Organization/University</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec3_org" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec3_org" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Phone</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec3_phone" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec3_phone" runat="server" MaxLength="20"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">Mailing Address</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec3_add" runat="server"></asp:TextBox></td></tr><tr>
+            <asp:TextBox 
+                  ID="rec3_add" runat="server" MaxLength="100"></asp:TextBox></td></tr><tr>
         <td width="50%" height="40"><p align="right">*Email</p></td><td width="50%" height="40">
-            <asp:TextBox ID="rec3_email" runat="server"></asp:TextBox>&nbsp;
+            <asp:TextBox 
+                  ID="rec3_email" runat="server" MaxLength="50"></asp:TextBox>&nbsp;
             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" 
                 ControlToValidate="rec3_email" ErrorMessage="* Required Field"></asp:RequiredFieldValidator><br />
             <asp:RegularExpressionValidator ID="RegularExpressionValidator21" 
@@ -720,11 +749,11 @@
       <br />
       <asp:View ID="View6" runat="server">
       <h1>Application successful submitted!</h1><form id="form6" runat="server">
-      Please press the &quot;Reture&quot; button below to reture to the useraccount page!<br /><br /><asp:Button 
-             ID="reture" runat="server" onclick="reture_Click" Text="Reture" /><br /></form>
+      <p>Please press the &quot;Return&quot; button below to return to the useraccount page.</p><br /><br /><asp:Button 
+             ID="return" runat="server" onclick="return_Click" Text="Return" /><br /></form>
        </asp:View>
           </asp:MultiView>
           <!-- end #mainContent --></div>
           <div id="footer">
-<p align="center"><a href="default.aspx">Homepx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<p align="center"><a href="myaccount.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
 <a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p><!-- end #footer --></div><!-- end #container --></div></body></html>
