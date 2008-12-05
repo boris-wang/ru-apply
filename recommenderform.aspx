@@ -17,8 +17,9 @@
       <td width="200"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td></tr></table></div>
   <div id="mainContent">
   <h1>Recommendation For Applicant
-      <asp:Label ID="app_fname" runat="server"></asp:Label>
-&nbsp;<asp:Label ID="app_lname" runat="server"></asp:Label>
+      <asp:Label ID="app_name" runat="server"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <asp:Button ID="logoff" runat="server" onclick="logoff_Click" Text="Log off" />
             </h1>
   <p>Please fill out all the questions below.</p>
   <table width="100%"><tr><td><strong>At what level would you place the applicant among the 
@@ -57,6 +58,9 @@ known the applicant.</strong></td></tr>
         Text="Delete the Uploaded File" Visible="False" />
     <br />
     <br />
+    <br />
+    <br />
+    <asp:Button ID="submit" runat="server" onclick="submit_Click" Text="Submit" />
     </td>
 </tr>
       </table>
