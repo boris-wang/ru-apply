@@ -34,7 +34,7 @@ public partial class userapplication : System.Web.UI.Page
             SqlConnection myConnection = new SqlConnection(MysqlConnection);
             myConnection.Open();
 
-            SqlCommand rtcmd = new SqlCommand("select * from application where ruid = @ruid and app_id=@ruid", myConnection);//need app_id
+            SqlCommand rtcmd = new SqlCommand("select * from application where ruid = @ruid and app_id=@app_id", myConnection);//need app_id
             rtcmd.Parameters.Add("@ruid", SqlDbType.NChar).Value = ruid;//what's the function of this sentence?
             SqlDataReader reader = rtcmd.ExecuteReader();
 
@@ -282,7 +282,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -317,7 +317,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -377,7 +377,7 @@ public partial class userapplication : System.Web.UI.Page
         myConnection.Open();
 
         //update function
-        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -460,7 +460,7 @@ public partial class userapplication : System.Web.UI.Page
         myConnection.Open();
 
         //update function
-        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -543,7 +543,7 @@ public partial class userapplication : System.Web.UI.Page
         myConnection.Open();
 
         //update function
-        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -614,19 +614,20 @@ public partial class userapplication : System.Web.UI.Page
                 try
                 {
                     FileUpload1.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/ps/ps"
-                    + ruid + psextension);
+                    + ruid + app_id + psextension);
                     Label1.Text = "File uploaded!";
                     FileUpload1.Visible = false;
                     Confirm1.Visible = false;
                     deleteps.Visible = true;
                     uploadPS.Enabled = false;
+                    viewps.Enabled = true;
 
                     string ifps0 = psextension;
                     string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
                     SqlConnection myConnection = new SqlConnection(MysqlConnection);
                     myConnection.Open();
 
-                    string updateCommand = "update application set app_id=@app_id,ifps=@ifps0 where ruid = @ruid and  app_id=@ruid";
+                    string updateCommand = "update application set app_id=@app_id,ifps=@ifps0 where ruid = @ruid and app_id=@app_id";
                     System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
                     cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
                     cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -651,18 +652,19 @@ public partial class userapplication : System.Web.UI.Page
         //{
         //    System.IO.File.Delete(filename);
         //}
-        File.Delete("D:/yan/web/ruapply/UploadedFiles/ps/ps" + ruid + psextension);
+        File.Delete("D:/yan/web/ruapply/UploadedFiles/ps/ps" + ruid + app_id + psextension);
         psextension = " ";
         uploadPS.Enabled = true;
         Label1.Text = "There is no PS uploaded.";
         deleteps.Visible = false;
+        viewps.Enabled = false;
 
         string ifps0 = psextension;
         string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -700,19 +702,20 @@ public partial class userapplication : System.Web.UI.Page
                 try
                 {
                     FileUpload2.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/resume/resume"
-                    + ruid + resumeextension);
+                    + ruid + app_id + resumeextension);
                     Label2.Text = "File uploaded!";
                     FileUpload2.Visible = false;
                     Confirm2.Visible = false;
                     Deleteresume.Visible = true;
                     uploadResume.Enabled = false;
+                    viewresume.Enabled = true;
 
                     string ifresume0 = resumeextension;
                     string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
                     SqlConnection myConnection = new SqlConnection(MysqlConnection);
                     myConnection.Open();
 
-                    string updateCommand = "update application set app_id=@app_id,ifresume=@ifresume0 where ruid = @ruid and  app_id=@ruid";
+                    string updateCommand = "update application set app_id=@app_id,ifresume=@ifresume0 where ruid = @ruid and app_id=@app_id";
                     System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
                     cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
                     cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -737,18 +740,19 @@ public partial class userapplication : System.Web.UI.Page
         //{
         //    System.IO.File.Delete(filename);
         //}
-        File.Delete("D:/yan/web/ruapply/UploadedFiles/resume/resume" + ruid + resumeextension);
+        File.Delete("D:/yan/web/ruapply/UploadedFiles/resume/resume" + ruid + app_id + resumeextension);
         resumeextension=" ";
         uploadResume.Enabled = true;
         Label2.Text = "There is no Resume uploaded.";
         Deleteresume.Visible = false;
+        viewresume.Enabled = false;
 
         string ifresume0 = resumeextension;
         string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifresume=@ifresume0 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,ifresume=@ifresume0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -786,7 +790,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -832,7 +836,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -878,7 +882,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -923,7 +927,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -982,7 +986,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -1041,7 +1045,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -1226,14 +1230,14 @@ public partial class userapplication : System.Web.UI.Page
         cmd3.Parameters.Add("@ANSWER", System.Data.SqlDbType.NChar, 100).Value = ANSWER3;
         cmd3.Parameters.Add("@ROLE", System.Data.SqlDbType.Int).Value = 2;
 
-        string updateCommand = "update application set app_id=@app_id,app_status=@app_status where ruid = @ruid and  app_id=@ruid";
+        string updateCommand = "update application set app_id=@app_id,app_status=@app_status where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@app_status", System.Data.SqlDbType.Int).Value = appstatus;
 
         //update admin_info
-        string updateCommand1 = "update admin_info set app_id=@app_id,deparment=@department where ruid = @ruid and  app_id=@ruid";
+        string updateCommand1 = "update admin_info set app_id=@app_id,deparment=@department where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd4 = new System.Data.SqlClient.SqlCommand(updateCommand1, myConnection);
         cmd4.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd4.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -1340,5 +1344,13 @@ public partial class userapplication : System.Web.UI.Page
     protected void return_Click(object sender, EventArgs e)
     {
         Response.Redirect("myaccount.aspx");
+    }
+    protected void viewps_Click(object sender, EventArgs e)
+    {
+        Response.Write("<script>window.open('/UploadedFiles/ps/ps' + ruid + app_id + psextension')</script>");
+    }
+    protected void viewresume_Click(object sender, EventArgs e)
+    {
+        Response.Write("<script>window.open('/ruapply/UploadedFiles/resume/resume' + ruid + app_id + resumeextension)</script>");
     }
 }
