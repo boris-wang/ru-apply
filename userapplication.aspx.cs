@@ -16,17 +16,22 @@ using System.IO;
 
 public partial class userapplication : System.Web.UI.Page
 {
-    int ruid = 3;//Convert.ToInt16(Session["ruid"]);
-    int app_id = 3;//Convert.ToInt16(Session["app_id"]);
+    int ruid;
+    int app_id;
     public static string psextension=" ";
     public static string resumeextension=" ";
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Convert.ToInt16(Session["LOGGEDIN"]) == 0)
-        //{
-        //    Response.Redirect("default.aspx");
-        //}
+        if (Convert.ToInt16(Session["LOGGEDIN"]) == 0)
+        {
+            Response.Redirect("default.aspx");
+        }
+
+        ruid = Convert.ToInt32(Session["ruid"]);
+        app_id = Convert.ToInt32(Session["app_id"]);
+        viewps.Enabled = false;
+        viewresume.Enabled = false;
         if (!this.IsPostBack)
         {
             string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
@@ -35,7 +40,8 @@ public partial class userapplication : System.Web.UI.Page
             myConnection.Open();
 
             SqlCommand rtcmd = new SqlCommand("select * from application where ruid = @ruid and app_id=@app_id", myConnection);//need app_id
-            rtcmd.Parameters.Add("@ruid", SqlDbType.NChar).Value = ruid;//what's the function of this sentence?
+            rtcmd.Parameters.Add("@ruid", SqlDbType.Int).Value = ruid;//what's the function of this sentence?
+            rtcmd.Parameters.Add("@app_id", SqlDbType.Int).Value = app_id;
             SqlDataReader reader = rtcmd.ExecuteReader();
 
             if (reader.Read())
@@ -91,6 +97,7 @@ public partial class userapplication : System.Web.UI.Page
                     Confirm1.Visible = false;
                     deleteps.Visible = true;
                     uploadPS.Enabled = false;
+                    viewps.Enabled = true;
                     psextension = Convert.ToString(reader["ifps"]).Trim();
                 }
                 if ((Convert.ToString(reader["ifresume"]).Trim() == ".pdf") | (Convert.ToString(reader["ifresume"]).Trim() == ".txt") | (Convert.ToString(reader["ifresume"]).Trim() == ".doc") | (Convert.ToString(reader["ifresume"]).Trim() == ".docx"))
@@ -98,6 +105,7 @@ public partial class userapplication : System.Web.UI.Page
                     Confirm2.Visible = false;
                     Deleteresume.Visible = true;
                     uploadResume.Enabled = false;
+                    viewresume.Enabled = true;
                     resumeextension = Convert.ToString(reader["ifresume"]).Trim();
                 }
 
@@ -282,7 +290,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -317,7 +325,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set college_name=@collegename,college_campus=@campus,college_school=@gradschool,college_program=@program,objective=@enrollobj,entry_term=@entryterm,status=@fullorhalf,area=@area,faculty=@faculty,othercollege=@otherschool where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -377,7 +385,7 @@ public partial class userapplication : System.Web.UI.Page
         myConnection.Open();
 
         //update function
-        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -460,7 +468,7 @@ public partial class userapplication : System.Web.UI.Page
         myConnection.Open();
 
         //update function
-        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -543,7 +551,7 @@ public partial class userapplication : System.Web.UI.Page
         myConnection.Open();
 
         //update function
-        string updateCommand = "update application set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -627,7 +635,7 @@ public partial class userapplication : System.Web.UI.Page
                     SqlConnection myConnection = new SqlConnection(MysqlConnection);
                     myConnection.Open();
 
-                    string updateCommand = "update application set app_id=@app_id,ifps=@ifps0 where ruid = @ruid and app_id=@app_id";
+                    string updateCommand = "update application set ifps=@ifps0 where ruid = @ruid and app_id=@app_id";
                     System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
                     cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
                     cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -664,7 +672,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set ifps=@ifps0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -715,7 +723,7 @@ public partial class userapplication : System.Web.UI.Page
                     SqlConnection myConnection = new SqlConnection(MysqlConnection);
                     myConnection.Open();
 
-                    string updateCommand = "update application set app_id=@app_id,ifresume=@ifresume0 where ruid = @ruid and app_id=@app_id";
+                    string updateCommand = "update application set ifresume=@ifresume0 where ruid = @ruid and app_id=@app_id";
                     System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
                     cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
                     cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -752,7 +760,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifresume=@ifresume0 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set ifresume=@ifresume0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -790,7 +798,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -836,7 +844,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -882,7 +890,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set app_id=@app_id,ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set ifps=@ifps0,ifresume=@ifresume0,assistyesorno=@assistyesorno0,fellow=@fellow0,ta=@ta0,ra=@ra0,tw=@tw0,explainforscholarship=@explainforscholarship0 where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -927,7 +935,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -986,7 +994,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -1045,7 +1053,7 @@ public partial class userapplication : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
-        string updateCommand = "update application set app_id=@app_id,rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set rec1_fname=@rec1_fname,rec1_lname=@rec1_lname,rec1_org=@rec1_org,rec1_phone=@rec1_phone,rec1_add=@rec1_add,rec1_email=@rec1_email,rec1_online=@rec1_online,rec2_fname=@rec2_fname,rec2_lname=@rec2_lname,rec2_org=@rec2_org,rec2_phone=@rec2_phone,rec2_add=@rec2_add,rec2_email=@rec2_email,rec2_online=@rec2_online,rec3_fname=@rec3_fname,rec3_lname=@rec3_lname,rec3_org=@rec3_org,rec3_phone=@rec3_phone,rec3_add=@rec3_add,rec3_email=@rec3_email,rec3_online=@rec3_online where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
             (updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
@@ -1175,19 +1183,19 @@ public partial class userapplication : System.Web.UI.Page
         string EMAIL1 = rec1_email.Text;
         string PASSWORD1 = Convert.ToString(iResult);
         string QUESTION1 = " ";
-        string ANSWER1 = " ";
+        string ANSWER1 = ruid + app_id + rec1_fname.Text + rec1_lname.Text;
 
         string USERNAME2 = appusername + rec2_fname.Text;
         string EMAIL2 = rec2_email.Text;
         string PASSWORD2 = Convert.ToString(iResult);
         string QUESTION2 = " ";
-        string ANSWER2 = " ";
+        string ANSWER2 = ruid + app_id + rec2_fname.Text + rec2_lname.Text;
 
         string USERNAME3 = appusername + rec3_fname.Text;
         string EMAIL3 = rec3_email.Text;
         string PASSWORD3 = Convert.ToString(iResult);
         string QUESTION3 = " ";
-        string ANSWER3 = " ";
+        string ANSWER3 = ruid + app_id + rec3_fname.Text + rec3_lname.Text;
 
         int appstatus=2;
 
@@ -1230,14 +1238,14 @@ public partial class userapplication : System.Web.UI.Page
         cmd3.Parameters.Add("@ANSWER", System.Data.SqlDbType.NChar, 100).Value = ANSWER3;
         cmd3.Parameters.Add("@ROLE", System.Data.SqlDbType.Int).Value = 2;
 
-        string updateCommand = "update application set app_id=@app_id,app_status=@app_status where ruid = @ruid and app_id=@app_id";
+        string updateCommand = "update application set app_status=@app_status where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@app_status", System.Data.SqlDbType.Int).Value = appstatus;
 
         //update admin_info
-        string updateCommand1 = "update admin_info set app_id=@app_id,deparment=@department where ruid = @ruid and app_id=@app_id";
+        string updateCommand1 = "update admin_info set department=@department where ruid = @ruid and app_id=@app_id";
         System.Data.SqlClient.SqlCommand cmd4 = new System.Data.SqlClient.SqlCommand(updateCommand1, myConnection);
         cmd4.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd4.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
@@ -1250,99 +1258,109 @@ public partial class userapplication : System.Web.UI.Page
         cmd4.ExecuteNonQuery();
         myConnection.Close();
 
-        MailMessage mail1 = new MailMessage();
-        mail1.To = rec1_email.Text;
-        mail1.From = "ruapplysystem@gmail.com";
-        mail1.Subject = "Online Recommendation Notification from RUapply System";
-        mail1.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation. The link is http://211.95.79.70/default.aspx. The Username is " + USERNAME1 + ". The Password is " + PASSWORD1 + ". Thank you!";
-
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
-
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
-        mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
-
-        try
+        if (rec1_online.SelectedValue == "Yes")
         {
-            SmtpMail.SmtpServer = "smtp.gmail.com";
-            SmtpMail.Send(mail1);
-            //Label2.Text = "Successful sent！";
+            MailMessage mail1 = new MailMessage();
+            mail1.To = rec1_email.Text;
+            mail1.From = "ruapplysystem@gmail.com";
+            mail1.Subject = "Online Recommendation Notification from RUapply System";
+            mail1.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation.  The Username is " + USERNAME1 + ". The Password is " + PASSWORD1 + ". Thank you!";
+
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
+
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
+            mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
+
+            try
+            {
+                SmtpMail.SmtpServer = "smtp.gmail.com";
+                SmtpMail.Send(mail1);
+                //Label2.Text = "Successful sent！";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                //Label2.Text="Fail to send the email！"; 
+            }
+            //SmtpMail.SmtpServer = "smtp.gmail.com";
+            //SmtpMail.Send(mail);
         }
-        catch (Exception ex)
+
+        if (rec2_online.SelectedValue == "Yes")
         {
-            Console.WriteLine(ex.ToString());
-            //Label2.Text="Fail to send the email！"; 
-        } 
-        //SmtpMail.SmtpServer = "smtp.gmail.com";
-        //SmtpMail.Send(mail);
+            MailMessage mail2 = new MailMessage();
+            mail2.To = rec2_email.Text;
+            mail2.From = "ruapplysystem@gmail.com";
+            mail2.Subject = "Online Recommendation Notification from RUapply System";
+            mail2.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation. The Username is " + USERNAME2 + ". The Password is " + PASSWORD2 + ". Thank you!";
 
-        MailMessage mail2 = new MailMessage();
-        mail2.To = rec2_email.Text;
-        mail2.From = "ruapplysystem@gmail.com";
-        mail2.Subject = "Online Recommendation Notification from RUapply System";
-        mail2.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation. The link is http://211.95.79.70/default.aspx. The Username is " + USERNAME2 + ". The Password is " + PASSWORD2+". Thank you!";
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
 
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
+            mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
 
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
-        mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
-
-        try
-        {
-            SmtpMail.SmtpServer = "smtp.gmail.com";
-            SmtpMail.Send(mail2);
-            //Label2.Text = "Successful sent！";
+            try
+            {
+                SmtpMail.SmtpServer = "smtp.gmail.com";
+                SmtpMail.Send(mail2);
+                //Label2.Text = "Successful sent！";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                //Label2.Text="Fail to send the email！"; 
+            }
+            //SmtpMail.SmtpServer = "smtp.gmail.com";
+            //SmtpMail.Send(mail);
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.ToString());
-            //Label2.Text="Fail to send the email！"; 
-        }
-        //SmtpMail.SmtpServer = "smtp.gmail.com";
-        //SmtpMail.Send(mail);
 
-        MailMessage mail3 = new MailMessage();
-        mail3.To = rec3_email.Text;
-        mail3.From = "ruapplysystem@gmail.com";
-        mail3.Subject = "Online Recommendation Notification from Ruapply System";
-        mail3.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation. The link is http://211.95.79.70/default.aspx. The Username is " + USERNAME3 + ". The Password is " + PASSWORD3 + ". Thank you!";
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
-
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
-        mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
-
-        try
+        if (rec3_online.SelectedValue == "Yes")
         {
-            SmtpMail.SmtpServer = "smtp.gmail.com";
-            SmtpMail.Send(mail3);
-            //Label2.Text = "Successful sent！";
+            MailMessage mail3 = new MailMessage();
+            mail3.To = rec3_email.Text;
+            mail3.From = "ruapplysystem@gmail.com";
+            mail3.Subject = "Online Recommendation Notification from Ruapply System";
+            mail3.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation.  The Username is " + USERNAME3 + ". The Password is " + PASSWORD3 + ". Thank you!";
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
+
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
+            mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
+
+            try
+            {
+                SmtpMail.SmtpServer = "smtp.gmail.com";
+                SmtpMail.Send(mail3);
+                //Label2.Text = "Successful sent！";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                //Label2.Text="Fail to send the email！"; 
+            }
+            //SmtpMail.SmtpServer = "smtp.gmail.com";
+            //SmtpMail.Send(mail);
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.ToString());
-            //Label2.Text="Fail to send the email！"; 
-        }
-        //SmtpMail.SmtpServer = "smtp.gmail.com";
-        //SmtpMail.Send(mail);
-        MultiView1.ActiveViewIndex = 5;
+        //MultiView1.ActiveViewIndex = 5;
 
     }
     protected void return_Click(object sender, EventArgs e)
     {
+        Session["ruid"] = ruid;
         Response.Redirect("myaccount.aspx");
     }
     protected void viewps_Click(object sender, EventArgs e)

@@ -692,9 +692,9 @@
   <tr>
   <td height="40" colspan="2"><strong>Supplemental Documents</strong></td></tr><tr>
   <td width="50%" align=right>Statement of Purpose</td><td width="50%" align=left><asp:LinkButton 
-                      ID="viewps" runat="server" Enabled="False" onclick="viewps_Click">View</asp:LinkButton></td></tr><tr>
+                      ID="viewps" runat="server" Enabled="True" onclick="viewps_Click">View</asp:LinkButton></td></tr><tr>
   <td width="50%" align=right>Resume</td><td width="50%" align=left><asp:LinkButton 
-                      ID="viewresume" runat="server" Enabled="False" onclick="viewresume_Click">View</asp:LinkButton></td></tr><tr>
+                      ID="viewresume" runat="server" Enabled="True" onclick="viewresume_Click">View</asp:LinkButton></td></tr><tr>
   <td width="50%" align=right>Assistantship Intent</td><td width="50%" align=left>
       <asp:Label ID="assistyesornoshow" runat="server"></asp:Label></td></tr><tr>
   <td width="50%" align=right>Preferred Type of Assignment</td><td width="50%" align=left>
