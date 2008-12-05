@@ -28,6 +28,7 @@ public partial class recommenderform : System.Web.UI.Page
 
         ruid = Convert.ToInt32(Session["ruid"]);
         name = Convert.ToString(Session["username"]);
+        submit.Visible = false;
 
         if (!this.IsPostBack)
         {
@@ -45,7 +46,7 @@ public partial class recommenderform : System.Web.UI.Page
                 app_name.Text = Convert.ToString(reader["app_name"]).Trim();
                 applicantposition.Text = Convert.ToString(reader["applicantposition"]).Trim();
 
-                if ((Convert.ToString(reader["ifrl"]).Trim() == ".pdf") | (Convert.ToString(reader["ifrl"]).Trim() == ".txt") | (Convert.ToString(reader["ifps"]).Trim() == ".doc") | (Convert.ToString(reader["ifps"]).Trim() == ".docx"))
+                if ((Convert.ToString(reader["ifrl"]).Trim() == ".pdf") | (Convert.ToString(reader["ifrl"]).Trim() == ".txt") | (Convert.ToString(reader["ifrl"]).Trim() == ".doc") | (Convert.ToString(reader["ifrl"]).Trim() == ".docx"))
                 {
                     Button2.Visible = false;
                     Button3.Visible = true;
@@ -126,7 +127,7 @@ public partial class recommenderform : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
-        string updateCommand = "update application set ifrl=@ifrl0 where ruid = @ruid";
+        string updateCommand = "update recommender set ifrl=@ifrl0 where ruid = @ruid";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@ifrl0", System.Data.SqlDbType.NChar).Value = ifrl0;
