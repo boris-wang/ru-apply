@@ -691,8 +691,10 @@
   <td width="50%" align=right>Job Description</td><td width="50%" align=left><asp:Label ID="describe3show" runat="server"></asp:Label></td></tr></table><table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
   <tr>
   <td height="40" colspan="2"><strong>Supplemental Documents</strong></td></tr><tr>
-  <td width="50%" align=right>Statement of Purpose</td><td width="50%" align=left>[View] [Delete]</td></tr><tr>
-  <td width="50%" align=right>Resume</td><td width="50%" align=left>[View] [Delete]</td></tr><tr>
+  <td width="50%" align=right>Statement of Purpose</td><td width="50%" align=left><asp:LinkButton 
+                      ID="viewps" runat="server" Enabled="False" onclick="viewps_Click">View</asp:LinkButton></td></tr><tr>
+  <td width="50%" align=right>Resume</td><td width="50%" align=left><asp:LinkButton 
+                      ID="viewresume" runat="server" Enabled="False" onclick="viewresume_Click">View</asp:LinkButton></td></tr><tr>
   <td width="50%" align=right>Assistantship Intent</td><td width="50%" align=left>
       <asp:Label ID="assistyesornoshow" runat="server"></asp:Label></td></tr><tr>
   <td width="50%" align=right>Preferred Type of Assignment</td><td width="50%" align=left>
