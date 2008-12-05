@@ -61,6 +61,8 @@ known the applicant.</strong></td></tr>
     <br />
     <br />
     <asp:Button ID="submit" runat="server" onclick="submit_Click" Text="Submit" />
+    <asp:Label ID="note" runat="server" Text="Successful Submitted!" 
+        Visible="False"></asp:Label>
     </td>
 </tr>
       </table>

@@ -142,6 +142,7 @@ public partial class recommenderform : System.Web.UI.Page
         Button1.Enabled = false;
         submit.Enabled = false;
         Response.Write("Successful Submitted!");
+        note.Visible = true;
     }
     protected void logoff_Click(object sender, EventArgs e)
     {
