@@ -1,12 +1,9 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register_3.aspx.cs" Inherits="register_3" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script runat="server">
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
 
-    }
 </script>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -35,6 +32,9 @@
         <td width="50%" height="40"><p align="right">* Institution Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+                    &nbsp;&nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="TextBox1" ErrorMessage="Required"></asp:RequiredFieldValidator>
                     </td>
       </tr>
       <tr>
@@ -42,12 +42,18 @@
         </p>        </td>
         <td width="50%" height="40"><label>
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="TextBox2" ErrorMessage="Required"></asp:RequiredFieldValidator>
             </label></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* State/Province</p></td>
         <td width="50%" height="40"><label>
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                ControlToValidate="TextBox3" ErrorMessage="Required"></asp:RequiredFieldValidator>
             </label></td>
       </tr>
       <tr>
@@ -58,7 +64,8 @@
                 <asp:ListItem>China</asp:ListItem>
                 <asp:ListItem>U.S</asp:ListItem>
             </asp:DropDownList>
-            </label></td>
+            </label>
+                    </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Date of Attendance<br />
@@ -151,20 +158,32 @@
         </p></td>
         <td width="50%" height="40"><label>
             <asp:TextBox ID="TextBox4" runat="server" Width="49px"></asp:TextBox>
-&nbsp;/ 4.0</label></td>
+&nbsp;/ 4.0&nbsp;&nbsp;&nbsp;
+            <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                ControlToValidate="TextBox4" ErrorMessage="Incorrect GPA" MaximumValue="4.0" 
+                MinimumValue="0.0" ValidationGroup="1" Type="Double"></asp:RangeValidator>
+            </label></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* Average Score<br />
         </p></td>
         <td width="50%" height="40"><label>
             <asp:TextBox ID="TextBox5" runat="server" Width="49px"></asp:TextBox>
-&nbsp;/ 100</label></td>
+&nbsp;/ 100&nbsp;&nbsp;&nbsp;
+            <asp:RangeValidator ID="RangeValidator2" runat="server" 
+                ControlToValidate="TextBox5" ErrorMessage="Incorrect average score" 
+                MaximumValue="100.0" MinimumValue="0.0" ValidationGroup="2" Type="Double"></asp:RangeValidator>
+            </label>
+                    </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Area of Major<br />
         </div></td>
         <td height="40"><label>
             <asp:TextBox ID="TextBox6" runat="server" Width="200px"></asp:TextBox>
+            &nbsp;&nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                ControlToValidate="TextBox6" ErrorMessage="Required"></asp:RequiredFieldValidator>
             </label></td>
       </tr>
       
@@ -173,6 +192,7 @@
         </p></td>
         <td height="40">
             <asp:DropDownList ID="DropDownList4" runat="server">
+                <asp:ListItem>Select one...</asp:ListItem>
                 <asp:ListItem>Bachelor of Arts</asp:ListItem>
                 <asp:ListItem>Bachelor of Science</asp:ListItem>
                 <asp:ListItem>Master of Arts</asp:ListItem>
@@ -180,6 +200,10 @@
                 <asp:ListItem>Master of Science</asp:ListItem>
                 <asp:ListItem>Philosophy of Doctor</asp:ListItem>
             </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;
+            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                ControlToValidate="DropDownList4" ErrorMessage="Select one" Operator="NotEqual" 
+                ValueToCompare="Select one..."></asp:CompareValidator>
                     </td>
       </tr>
       <tr>
@@ -200,7 +224,7 @@
                 <asp:ListItem>Nov</asp:ListItem>
                 <asp:ListItem>Dec</asp:ListItem>
             </asp:DropDownList>
-&nbsp;/
+            &nbsp;/
             <asp:DropDownList ID="DropDownList6" runat="server">
                 <asp:ListItem>1949</asp:ListItem>
                 <asp:ListItem>1950</asp:ListItem>
@@ -267,7 +291,7 @@
                     </td>
       </tr>
       <tr>
-        <td height="40" colspan="2"><p><strong><u>Institution 2</u> (Skip this section if not applicable.)</strong></p></td>
+        <td height="40" colspan="2"><p><strong><u>Institution 2 (Skip this section if not applicable.)</p></td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">Institution Name</p></td>
@@ -409,8 +433,9 @@
       <tr>
         <td height="40"><p align="right">Degree<br />
         </p></td>
-        <td height="40"><label>
+        <td height="40">
             <asp:DropDownList ID="DropDownList10" runat="server">
+                <asp:ListItem>Select one...</asp:ListItem>
                 <asp:ListItem>Bachelor of Arts</asp:ListItem>
                 <asp:ListItem>Bachelor of Science</asp:ListItem>
                 <asp:ListItem>Master of Arts</asp:ListItem>
@@ -418,7 +443,7 @@
                 <asp:ListItem>Master of Science</asp:ListItem>
                 <asp:ListItem>Philosophy of Doctor</asp:ListItem>
             </asp:DropDownList>
-            </label></td>
+                    </td>
       </tr>
       <tr>
         <td height="40"><p align="right">&nbsp;Degree Awarded Date<br />
@@ -647,8 +672,9 @@
       <tr>
         <td height="40" align="right">Degree
         </td>
-        <td height="40"><label>
+        <td height="40">
             <asp:DropDownList ID="DropDownList16" runat="server">
+                <asp:ListItem>Select one...</asp:ListItem>
                 <asp:ListItem>Bachelor of Arts</asp:ListItem>
                 <asp:ListItem>Bachelor of Science</asp:ListItem>
                 <asp:ListItem>Master of Arts</asp:ListItem>
@@ -656,10 +682,11 @@
                 <asp:ListItem>Master of Science</asp:ListItem>
                 <asp:ListItem>Philosophy of Doctor</asp:ListItem>
             </asp:DropDownList>
-            </label></td></tr>
+                    </td></tr>
             <tr><td align=right>Degree Awarded Date</td>
         <td height="40"><label>
             <asp:DropDownList ID="DropDownList17" runat="server">
+                
                 <asp:ListItem>Jan</asp:ListItem>
                 <asp:ListItem>Feb</asp:ListItem>
                 <asp:ListItem>Mar</asp:ListItem>
@@ -673,7 +700,7 @@
                 <asp:ListItem>Nov</asp:ListItem>
                 <asp:ListItem>Dec</asp:ListItem>
             </asp:DropDownList>
-&nbsp;/
+            &nbsp;/
             <asp:DropDownList ID="DropDownList18" runat="server">
                 <asp:ListItem>1949</asp:ListItem>
                 <asp:ListItem>1950</asp:ListItem>
@@ -744,13 +771,13 @@
           <a href="register_4.aspx">
         <label></label>
             </a>
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/register_1.aspx">Previous 
-            Page</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton2" runat="server">Save</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/register_3.aspx">Next 
-            Page</asp:LinkButton>
+            <asp:Button ID="Button1" runat="server" Text="Previous" 
+                onclick="Button1_Click" Font-Bold="True" Width="75px" />
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button2" 
+                runat="server" Text="Save" Font-Bold="True" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button3" runat="server" Text="Next" 
+                onclick="Button3_Click" Font-Bold="True" Width="75px" />
             </div></td>
         </tr>
     </table>
@@ -758,14 +785,8 @@
         </p>
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
-<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-5821511-1";
-urchinTracker();
-</script>
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
   <!-- end #footer --></div>
 <!-- end #container --></div>
 </body>

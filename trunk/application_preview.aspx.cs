@@ -23,23 +23,42 @@ public partial class application_preview : System.Web.UI.Page
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
-       MailMessage mail = new MailMessage();
-       mail.To = "jt_tony_5@hotmail.com";
-       mail.From = "ruapplysystem@gmail.com";
-       mail.Subject = "null";
-       mail.Body = "your decision";
+       MailMessage mail1 = new MailMessage();
+       mail1.To = rec3_email.Text;
+       mail1.From = "ruapplysystem@gmail.com";
+       mail1.Subject = "testcase";
+       mail1.Body = "hello, man";
 
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
 
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
+       mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
 
        SmtpMail.SmtpServer = "smtp.gmail.com";
-       SmtpMail.Send(mail);
+       SmtpMail.Send(mail1);
+       
+       MailMessage mail2 = new MailMessage();
+       mail2.To = rec2_email.Text;
+       mail2.From = "ruapplysystem@gmail.com";
+       mail2.Subject = "testcase";
+       mail2.Body = "hello, man";
+
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1);
+
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", true);
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "ruapplysystem@gmail.com");
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "areyouapply");
+       mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendemailaddress", "ruapplysystem@gmail.com");
+
+       SmtpMail.SmtpServer = "smtp.gmail.com";
+       SmtpMail.Send(mail2);
     }
 }

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="usercreate.aspx.cs" Inherits="usercreate" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,51 +7,6 @@
 <title>Create New Username</title>
 
 <script runat="server">
-
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void CreateNewUser(object sender, EventArgs e)
-    {
-        //input these three info in the testboxs
-        string USERNAME = TextBox1.Text;
-        string EMAIL = TextBox2.Text;
-        string PASSWORD = TextBox3.Text;
-        string QUESTION = TextBox5.Text;
-        string ANSWER = TextBox6.Text;
-        
-        //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection = "Data Source=jordan\\SQLEXPRESS;Initial Catalog=RegisteredUsers;Integrated Security=True";
-        System.Data.SqlClient.SqlConnection myConnection = new System.Data.SqlClient.SqlConnection(MysqlConnection);
-        myConnection.Open();
-
-        //insert function
-        string InsertCommand = "insert into login_db (username,password,email,question,answer) values (@USERNAME,@PASSWORD,@EMAIL,@QUESTION,@ANSWER)";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(InsertCommand, myConnection);
-        cmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
-        cmd.Parameters.Add("@PASSWORD", System.Data.SqlDbType.VarChar, 20).Value = PASSWORD;
-        cmd.Parameters.Add("@EMAIL", System.Data.SqlDbType.VarChar, 50).Value = EMAIL;
-        cmd.Parameters.Add("@QUESTION", System.Data.SqlDbType.VarChar, 1000).Value = QUESTION;
-        cmd.Parameters.Add("@ANSWER", System.Data.SqlDbType.VarChar, 1000).Value = ANSWER;        
-        
-
-        cmd.ExecuteNonQuery();
-
-        myConnection.Close();
-        Response.Redirect("usercreateconf.aspx");
-    }
-
-    protected void ClearInputForm(object sender, EventArgs e)
-    {   
-        TextBox1.Text = "";
-        TextBox2.Text = "";
-        TextBox3.Text = "";
-        TextBox4.Text = "";
-        TextBox5.Text = "";
-        TextBox6.Text = "";
-    }
 
 </script>
 
@@ -91,6 +47,8 @@
                 ValidationExpression="(?!^[0-9]*$)(?!^[a-zA-Z_@]*$)(?!^[0-9_@]{1})^([a-zA-Z0-9_@]{8,15})$" 
                 ValidationGroup="textboxes" ControlToValidate="TextBox1" 
                 ErrorMessage="Alphanumeric, 8-15 characters long. Must start with a letter."></asp:RegularExpressionValidator>
+            <br />
+            <asp:Label ID="Label1" runat="server"></asp:Label>
             <br />
             </td>
       </tr>
@@ -169,17 +127,11 @@
         </form>
         </p></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Homedefault.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
-<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
     <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-5821511-1");
-pageTracker._trackPageview();
-</script>
-  <!-- end #footer --></div>
-<!-- end #container --></div>
-</body>
-</html>
+var pageTracker = _gat._getTracker("UA-5821511-1")

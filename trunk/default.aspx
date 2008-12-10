@@ -28,28 +28,28 @@
           <form id="form1" runat="server">
             <table style="width:100%;">
                 <tr>
-                    <td>
+                    <td width="50%" align="right">
                         Username:</td>
-                    <td>
-                        <asp:TextBox ID="TextBox1" runat="server" ValidationGroup="userandpass"></asp:TextBox>
+                    <td width="50%" align="left">
+                        <asp:TextBox ID="TextBox1" runat="server" ValidationGroup="userandpass" width="150px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                             ControlToValidate="TextBox1" ErrorMessage="Required." 
                             ValidationGroup="userandpass"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td width="50%" align="right">
                         Password:</td>
-                    <td>
+                    <td width="50%" align="left">
                         <asp:TextBox ID="TextBox2" runat="server" ValidationGroup="userandpass" 
-                            TextMode="Password"></asp:TextBox>
+                            TextMode="Password" width="150px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                             ControlToValidate="TextBox2" ErrorMessage="Required." 
                             ValidationGroup="userandpass"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td colspan="2" align="center">
                         <asp:Label ID="Label1" runat="server"></asp:Label>
                         <br />
                         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Login" 
@@ -78,7 +78,7 @@
       
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
 <a href="about.aspx">About</a> | <a href="help.aspx">Help</a><br />
         RU-Apply is a web application system based on ASP.NET technology.</p>
     <script type="text/javascript">

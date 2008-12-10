@@ -757,5 +757,5 @@
           </asp:MultiView>
           <!-- end #mainContent --></div>
           <div id="footer">
-<p align="center"><a href="myaccount.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
 <a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p><!-- end #footer --></div><!-- end #container --></div></body></html>

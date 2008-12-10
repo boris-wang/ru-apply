@@ -57,8 +57,8 @@
         <td width="50%" height="40"><p align="right">Title</p></td>
         <td width="50%" height="40">
             <asp:DropDownList ID="DropDownList1" runat="server">
-                <asp:ListItem>Mr.</asp:ListItem>
-                <asp:ListItem>Mrs.</asp:ListItem>
+                <asp:ListItem Value="Mr.">Mr.</asp:ListItem>
+                <asp:ListItem Value="Mrs.">Mrs.</asp:ListItem>
             </asp:DropDownList>
           </td>
       </tr>
@@ -66,6 +66,9 @@
         <td width="50%" height="40"><p align="right">* First Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="TextBox1" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
@@ -78,6 +81,9 @@
         <td width="50%" height="40"><p align="right">* Last Name</p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="TextBox3" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
@@ -116,8 +122,8 @@
       <tr>
         <td height="40"><p align="right">* Gender</p></td>
         <td height="40">
-            <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" 
-                Checked="True" GroupName="1" />
+            <asp:RadioButton ID="RadioButton1" runat="server" Text="Male" GroupName="1" 
+                Checked="True" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:RadioButton ID="RadioButton2" runat="server" Text="Female" 
                 GroupName="1" />
@@ -134,19 +140,21 @@
         <td height="40"><div align="right">* Birth Date (MM/DD/YYYY)<br />
         </div></td>
         <td height="40">
-            &nbsp;<asp:DropDownList ID="DropDownList2" runat="server">
-                <asp:ListItem>Jan</asp:ListItem>
-                <asp:ListItem>Feb</asp:ListItem>
-                <asp:ListItem>Mar</asp:ListItem>
-                <asp:ListItem>Apr</asp:ListItem>
-                <asp:ListItem>May</asp:ListItem>
-                <asp:ListItem>Jun</asp:ListItem>
-                <asp:ListItem>Jul</asp:ListItem>
-                <asp:ListItem>Aug</asp:ListItem>
-                <asp:ListItem>Sep</asp:ListItem>
-                <asp:ListItem>Oct</asp:ListItem>
-                <asp:ListItem>Nov</asp:ListItem>
-                <asp:ListItem>Dec</asp:ListItem>
+            &nbsp;<asp:DropDownList ID="DropDownList2" runat="server" 
+                AppendDataBoundItems="True" 
+                onselectedindexchanged="DropDownList2_SelectedIndexChanged">
+                <asp:ListItem Value="Jan">Jan</asp:ListItem>
+                <asp:ListItem Value="Feb">Feb</asp:ListItem>
+                <asp:ListItem Value="Mar">Mar</asp:ListItem>
+                <asp:ListItem Value="Apr">Apr</asp:ListItem>
+                <asp:ListItem Value="May">May</asp:ListItem>
+                <asp:ListItem Value="Jun">Jun</asp:ListItem>
+                <asp:ListItem Value="Jul">Jul</asp:ListItem>
+                <asp:ListItem Value="Aug">Aug</asp:ListItem>
+                <asp:ListItem Value="Sep">Sep</asp:ListItem>
+                <asp:ListItem Value="Oct">Oct</asp:ListItem>
+                <asp:ListItem Value="Nov">Nov</asp:ListItem>
+                <asp:ListItem Value="Dec">Dec</asp:ListItem>
             </asp:DropDownList>
             <span class="style2">&nbsp;</span><span class="style3">/</span><span 
                 class="style2"> </span>&nbsp;<asp:DropDownList ID="DropDownList3" 
@@ -255,7 +263,9 @@
         <td height="40">
             <asp:DropDownList ID="DropDownList5" runat="server">
                 <asp:ListItem>China</asp:ListItem>
-                <asp:ListItem>U.S</asp:ListItem>
+                <asp:ListItem>Germany</asp:ListItem>
+                <asp:ListItem>India</asp:ListItem>
+                <asp:ListItem>United States</asp:ListItem>
             </asp:DropDownList>
                     </td>
       </tr>
@@ -265,7 +275,9 @@
         <td height="40">
             <asp:DropDownList ID="DropDownList6" runat="server">
                 <asp:ListItem>China</asp:ListItem>
-                <asp:ListItem>U.S</asp:ListItem>
+                <asp:ListItem>Germany</asp:ListItem>
+                <asp:ListItem>India</asp:ListItem>
+                <asp:ListItem>United States</asp:ListItem>
             </asp:DropDownList>
                     </td>
       </tr>
@@ -274,6 +286,7 @@
             <div align="right">Ethnic Background (Optional)&nbsp;</div>
         </div></td><td height="40">
                         <asp:DropDownList ID="DropDownList7" runat="server">
+                            <asp:ListItem>Select one</asp:ListItem>
                             <asp:ListItem>American Indian or Alaskan Native</asp:ListItem>
                             <asp:ListItem>Asian or Pacific Islander</asp:ListItem>
                             <asp:ListItem>Black, Non-Purto-Rican</asp:ListItem>
@@ -281,32 +294,39 @@
                             <asp:ListItem>White, Non-Hispanic</asp:ListItem>
                             <asp:ListItem>Other Racial / Ethnic Group</asp:ListItem>
                         </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;
+                        <asp:CompareValidator ID="CompareValidator2" runat="server" 
+                            ControlToValidate="DropDownList7" ErrorMessage="Select one" Operator="NotEqual" 
+                            ValueToCompare="Select one"></asp:CompareValidator>
                     </td>
       </tr>
       <tr>
         <td height="40" align="right">* Have You Ever Been Convicted of A Felony?
         </td>
         <td>
-            <asp:RadioButton ID="RadioButton3" runat="server" Text="      Yes" 
-                GroupName="2" />
+            <asp:RadioButton ID="RadioButton3" runat="server" Text="Yes" 
+                GroupName="2" oncheckedchanged="RadioButton3_CheckedChanged" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:RadioButton ID="RadioButton4" runat="server" Text="      No" 
-                Checked="True" GroupName="2" />
+            <asp:RadioButton ID="RadioButton4" runat="server" Text="No" 
+                Checked="True" GroupName="2" 
+                oncheckedchanged="RadioButton4_CheckedChanged" />
                     </td></tr><tr>
         <td height="40" align="right">If yes, please explain.
       </td>
         <td>
-            <asp:TextBox ID="TextBox9" runat="server" Height="85px" Width="326px"></asp:TextBox>
+            <asp:TextBox ID="TextBox9" runat="server" Height="85px" Width="326px" 
+                MaxLength="200"></asp:TextBox>
                     </td>
       </tr>
       
       <tr>
         <td height="40" colspan="2"><div align="center">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" Text="Save" onclick="Button1_Click1" />
+            <asp:Button ID="Button1" runat="server" Text="Save" onclick="Button1_Click1" 
+                Font-Bold="True" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button2" runat="server" Text="Next Page" 
-                onclick="Button2_Click1" />
+            <asp:Button ID="Button2" runat="server" Text="Next" 
+                onclick="Button2_Click1" Font-Bold="True" Width="75px" />
             </div></td>
         </tr>
     </table>
@@ -314,9 +334,8 @@
 
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home/a> | 
-    Information | Apply | Status | Admission | Site Map | 
-<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">

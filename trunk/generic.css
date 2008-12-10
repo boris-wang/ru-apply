@@ -10,7 +10,7 @@ body {
 	color: #000000;
 }
 .oneColElsCtrHdr #container {
-	width: 46em; 
+	width: 1000px; 
 	background: #FFFFFF;
 	margin: 0 auto; 
 	border: 1px solid #000000;
@@ -45,9 +45,9 @@ td {
 	margin-bottom: 5px;
 	margin-left: 5px;
 	padding-top: 10px;
-	padding-right: 20px;
+	padding-right: 10px;
 	padding-bottom: 10px;
-	padding-left: 20px;
+	padding-left: 10px;
 }
 .oneColElsCtrHdr #footer { 
 	padding: 0 10px; 
@@ -81,6 +81,11 @@ td a:active {
 .smallnote {
 	font-size: 9px;
 	color: #000000;
+	padding:10px;
+}
+.redsmallnote {
+	font-size: 9px;
+	color: Red;
 	padding:10px;
 }
 .oneColElsCtrHdr #footer a:link {

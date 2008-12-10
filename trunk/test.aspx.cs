@@ -17,7 +17,10 @@ public partial class test : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Convert.ToInt16(Session["LOGGEDIN"]) == 0)
+        {
+            Response.Redirect("default.aspx");
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -26,13 +29,13 @@ public partial class test : System.Web.UI.Page
     }
     protected void Button2_Click(object sender, EventArgs e)
     {
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = RUapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
-        SqlCommand countcmd = new SqlCommand("select count(*) from test where decision = @decision", myConnection);
+        SqlCommand countcmd = new SqlCommand("select count(*) from admin_info where decision = @decision", myConnection);
         countcmd.Parameters.Add("@decision", SqlDbType.Bit).Value = true;
         int c = Convert.ToInt32(countcmd.ExecuteScalar());
-        SqlCommand rtcmd = new SqlCommand("select * from test where decision = @decision", myConnection);
+        SqlCommand rtcmd = new SqlCommand("select * from admin_info where decision = @decision", myConnection);
         rtcmd.Parameters.Add("@decision", SqlDbType.Bit).Value = true;
         SqlDataReader reader = rtcmd.ExecuteReader();
         string [,]info = new string [c,12];
@@ -110,7 +113,6 @@ public partial class test : System.Web.UI.Page
                 //info[i, 5] == true;
                 //SmtpMail.SmtpServer = "smtp.gmail.com";
                 SmtpMail.Send(mail);
-
             }
 
         }
@@ -126,10 +128,10 @@ public partial class test : System.Web.UI.Page
     }
     protected void Button4_Click(object sender, EventArgs e)
     {
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = RUapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
-        SqlCommand SortCommand = new SqlCommand("select rank() over(order by gre desc) as row_num from test where ruid = 2", myConnection);
+        SqlCommand SortCommand = new SqlCommand("select rank() over(order by gre desc) as row_num from admin_info where ruid = 2", myConnection);
         int d = Convert.ToInt32(SortCommand.ExecuteScalar());
         int i=2;
 

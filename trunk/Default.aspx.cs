@@ -35,25 +35,85 @@ public partial class defaultclass : System.Web.UI.Page
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         
-        //insert function
+        
         string SelectCommand = "SELECT * FROM login_db WHERE username = @USERNAME";
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(SelectCommand, myConnection);
         cmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.NChar, 20).Value = USERNAME;
 
         string passwordfromdb = "";
+        int role=0;
         SqlDataReader reader = cmd.ExecuteReader();
 
         if (reader.Read())
         {
             passwordfromdb = Convert.ToString(reader["password"]);
+            role = Convert.ToInt16(reader["role"]);
+            //Session["ruid"] = reader["ruid"];
         }
+        reader.Close();
         if (PASSWORD == passwordfromdb.TrimEnd())
-            Response.Redirect("myaccount.aspx");
+        {
+            Session["LOGGEDIN"] = 1;
+            if (role == 1)
+            {
+                Session["username"] = TextBox1.Text;
+
+                string getCommand = "select * from login_db where (username = @USERNAME)";
+                System.Data.SqlClient.SqlCommand gcmd = new System.Data.SqlClient.SqlCommand(getCommand, myConnection);
+                gcmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
+                SqlDataReader re = gcmd.ExecuteReader();
+                if (re.Read())
+                {
+                    Session["ruid"] = re["ruid"];
+                }
+
+                re.Close(); 
+
+
+                Response.Redirect("myaccount.aspx");
+            }
+            else if (role == 2)
+            {
+                Session["username"] = TextBox1.Text;
+
+                string getCommand = "select * from login_db where (username = @USERNAME)";
+                System.Data.SqlClient.SqlCommand gcmd = new System.Data.SqlClient.SqlCommand(getCommand, myConnection);
+                gcmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
+                SqlDataReader re = gcmd.ExecuteReader();
+                if (re.Read())
+                {
+                    Session["ruid"] = re["ruid"];
+                }
+
+                re.Close(); 
+
+
+                Response.Redirect("recommenderform.aspx");
+            }
+            else if (role == 3)
+            {
+                Session["username"] = TextBox1.Text;
+
+                string getCommand = "select * from login_db where (username = @USERNAME)";
+                System.Data.SqlClient.SqlCommand gcmd = new System.Data.SqlClient.SqlCommand(getCommand, myConnection);
+                gcmd.Parameters.Add("@USERNAME", System.Data.SqlDbType.VarChar, 20).Value = USERNAME;
+                SqlDataReader re = gcmd.ExecuteReader();
+                if (re.Read())
+                {
+                    Session["ruid"] = re["ruid"];
+                }
+
+                re.Close(); 
+
+
+                Response.Redirect("admissions.aspx");
+            }
+        }
         else
             Label1.Text = "Invalid username or password. Please try again.";
 
         //cmd.ExecuteNonQuery();
-
+        
         myConnection.Close();
     }
 }

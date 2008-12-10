@@ -8,6 +8,9 @@ public partial class recommender_port : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Convert.ToInt16(Session["LOGGEDIN"]) == 0)
+        {
+            Response.Redirect("default.aspx");
+        }
     }
 }
