@@ -74,12 +74,12 @@
     <p>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
             ConnectionString="<%$ ConnectionStrings:RUapplyConnectionString %>" 
-            DeleteCommand="DELETE FROM [test] WHERE [ruid] = @original_ruid" 
-            InsertCommand="INSERT INTO [test] ([name], [ruid], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3]) VALUES (@name, @ruid, @department, @gpa, @gre, @toefl, @email, @decision, @ad, @ad_type, @rej, @rej_reason1, @rej_reason2, @rej_reason3)" 
+            DeleteCommand="DELETE FROM [admin_info] WHERE [ruid] = @original_ruid" 
+            InsertCommand="INSERT INTO [admin_info] ([name], [ruid], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3]) VALUES (@name, @ruid, @department, @gpa, @gre, @toefl, @email, @decision, @ad, @ad_type, @rej, @rej_reason1, @rej_reason2, @rej_reason3)" 
             OldValuesParameterFormatString="original_{0}" 
-            SelectCommand="SELECT [name], [ruid], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3] FROM [test] WHERE (([gpa] &gt;= @gpa) AND ([gre] &gt;= @gre) AND ([toefl] &gt;= @toefl))" 
+            SelectCommand="SELECT [name], [ruid], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3] FROM [admin_info] WHERE (([gpa] &gt;= @gpa) AND ([gre] &gt;= @gre) AND ([toefl] &gt;= @toefl))" 
             
-            UpdateCommand="UPDATE [test] SET [name] = @name, [department] = @department, [gpa] = @gpa, [gre] = @gre, [toefl] = @toefl, [email] = @email, [decision] = @decision, [ad] = @ad, [ad_type] = @ad_type, [rej] = @rej, [rej_reason1] = @rej_reason1, [rej_reason2] = @rej_reason2, [rej_reason3] = @rej_reason3 WHERE [ruid] = @original_ruid" 
+            UpdateCommand="UPDATE [admin_info] SET [name] = @name, [department] = @department, [gpa] = @gpa, [gre] = @gre, [toefl] = @toefl, [email] = @email, [decision] = @decision, [ad] = @ad, [ad_type] = @ad_type, [rej] = @rej, [rej_reason1] = @rej_reason1, [rej_reason2] = @rej_reason2, [rej_reason3] = @rej_reason3 WHERE [ruid] = @original_ruid" 
             onselecting="SqlDataSource2_Selecting">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList1" DefaultValue="0" Name="gpa" 
@@ -194,10 +194,10 @@
             Text="Confirm" />
         <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
             ConnectionString="<%$ ConnectionStrings:RUapplyConnectionString %>" 
-            DeleteCommand="DELETE FROM [test] WHERE [ruid] = @ruid" 
-            InsertCommand="INSERT INTO [test] ([ruid], [name], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3]) VALUES (@ruid, @name, @department, @gpa, @gre, @toefl, @email, @decision, @ad, @ad_type, @rej, @rej_reason1, @rej_reason2, @rej_reason3)" 
-            SelectCommand="SELECT [ruid], [name], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3] FROM [test] WHERE ([ruid] = @ruid)" 
-            UpdateCommand="UPDATE [test] SET [name] = @name, [department] = @department, [gpa] = @gpa, [gre] = @gre, [toefl] = @toefl, [email] = @email, [decision] = @decision, [ad] = @ad, [ad_type] = @ad_type, [rej] = @rej, [rej_reason1] = @rej_reason1, [rej_reason2] = @rej_reason2, [rej_reason3] = @rej_reason3 WHERE [ruid] = @ruid">
+            DeleteCommand="DELETE FROM [admin_info] WHERE [ruid] = @ruid" 
+            InsertCommand="INSERT INTO [admin_info] ([ruid], [name], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3]) VALUES (@ruid, @name, @department, @gpa, @gre, @toefl, @email, @decision, @ad, @ad_type, @rej, @rej_reason1, @rej_reason2, @rej_reason3)" 
+            SelectCommand="SELECT [ruid], [name], [department], [gpa], [gre], [toefl], [email], [decision], [ad], [ad_type], [rej], [rej_reason1], [rej_reason2], [rej_reason3] FROM [admin_info] WHERE ([ruid] = @ruid)" 
+            UpdateCommand="UPDATE [admin_info] SET [name] = @name, [department] = @department, [gpa] = @gpa, [gre] = @gre, [toefl] = @toefl, [email] = @email, [decision] = @decision, [ad] = @ad, [ad_type] = @ad_type, [rej] = @rej, [rej_reason1] = @rej_reason1, [rej_reason2] = @rej_reason2, [rej_reason3] = @rej_reason3 WHERE [ruid] = @ruid">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox1" Name="ruid" PropertyName="Text" 
                     Type="String" />

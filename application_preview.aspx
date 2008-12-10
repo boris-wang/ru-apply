@@ -219,7 +219,7 @@
     <tr>
   <td width="50%" align=right>Email</td>
   <td width="50%" align=left>
-      <asp:Label ID="rec2_email" runat="server"></asp:Label>
+      <asp:Label ID="rec2_email" runat="server" Text="zihao.yu@gmail.com"></asp:Label>
                     </td>
   </tr>
       <tr>
@@ -254,7 +254,7 @@
     <tr>
   <td width="50%" align=right>Email</td>
   <td width="50%" align=left>
-      <asp:Label ID="rec3_email" runat="server"></asp:Label>
+      <asp:Label ID="rec3_email" runat="server" Text="jt_tony_5@hotmail.com"></asp:Label>
                     </td>
   </tr>
       <tr>

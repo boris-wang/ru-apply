@@ -33,7 +33,7 @@ public partial class application1 : System.Web.UI.Page
         string area0 = area.Text;
         string faculty0 = faculty.Text;
         string othercollege = otherschool.Text;
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
@@ -69,7 +69,7 @@ public partial class application1 : System.Web.UI.Page
         string area0 = area.Text;
         string faculty0 = faculty.Text;
         string othercollege = otherschool.Text;
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 

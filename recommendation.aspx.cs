@@ -45,7 +45,7 @@ public partial class recommendation : System.Web.UI.Page
         string rec3email = rec3_email.Text;
         string rec3online = rec3_online.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection ="Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
@@ -137,7 +137,7 @@ public partial class recommendation : System.Web.UI.Page
         string rec3email = rec3_email.Text;
         string rec3online = rec3_online.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function
@@ -197,7 +197,7 @@ public partial class recommendation : System.Web.UI.Page
         string rec3email = rec3_email.Text;
         string rec3online = rec3_online.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
         //update function

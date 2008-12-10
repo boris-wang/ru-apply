@@ -16,7 +16,10 @@ using System.Xml.Linq;
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToInt16(Session["LOGGEDIN"]) == 0)
+            {
+                Response.Redirect("default.aspx");
+            }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

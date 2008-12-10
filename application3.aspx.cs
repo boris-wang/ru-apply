@@ -37,6 +37,7 @@ public partial class application3 : System.Web.UI.Page
     }
     protected void uploadResume_Click(object sender, EventArgs e)
     {
+        Label2.Text = FileUpload1.FileName;
         FileUpload2.Visible = true;
         Button2.Visible = true; 
     }
@@ -63,7 +64,7 @@ public partial class application3 : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload1.PostedFile.SaveAs("F:\\下载\\try\\ps\\"
+                    FileUpload1.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/ps/"
                     + FileUpload1.FileName);
                     Label1.Text = "File uploaded!";
                     FileUpload1.Visible = false;
@@ -105,7 +106,7 @@ public partial class application3 : System.Web.UI.Page
             {
                 try
                 {
-                    FileUpload2.PostedFile.SaveAs("F:\\下载\\try\\resume\\"
+                    FileUpload2.PostedFile.SaveAs("D:/yan/web/ruapply/UploadedFiles/resume/"
                     + FileUpload2.FileName);
                     Label2.Text = "File uploaded!";
                     FileUpload2.Visible = false;
@@ -126,7 +127,7 @@ public partial class application3 : System.Web.UI.Page
     }
     protected void Button3_Click(object sender, EventArgs e)
     {
-        foreach (string filename in System.IO.Directory.GetFiles("F:\\下载\\try\\ps\\"))
+        foreach (string filename in System.IO.Directory.GetFiles("D:/yan/web/ruapply/UploadedFiles/ps/"))
         {
             System.IO.File.Delete(filename);
         }
@@ -136,7 +137,7 @@ public partial class application3 : System.Web.UI.Page
     }
     protected void Button4_Click(object sender, EventArgs e)
     {
-        foreach (string filename in System.IO.Directory.GetFiles("F:\\下载\\try\\resume\\"))
+        foreach (string filename in System.IO.Directory.GetFiles("D:/yan/web/ruapply/UploadedFiles/resume/"))
         {
             System.IO.File.Delete(filename);
         }

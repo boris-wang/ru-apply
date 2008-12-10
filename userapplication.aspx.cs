@@ -18,6 +18,7 @@ public partial class userapplication : System.Web.UI.Page
 {
     int ruid;
     int app_id;
+    string name;
     public static string psextension=" ";
     public static string resumeextension=" ";
 
@@ -30,6 +31,7 @@ public partial class userapplication : System.Web.UI.Page
 
         ruid = Convert.ToInt32(Session["ruid"]);
         app_id = Convert.ToInt32(Session["app_id"]);
+        name = Convert.ToString(Session["name"]);
         viewps.Enabled = false;
         viewresume.Enabled = false;
         if (!this.IsPostBack)
@@ -179,8 +181,8 @@ public partial class userapplication : System.Web.UI.Page
                     rec3_online.SelectedValue = "No";
                 }
                 //Jump after submitted
-                int condition = Convert.ToInt16(reader["app_status"]);
-                if (condition == 2)
+                string condition = Convert.ToString(reader["app_status"]).Trim();
+                if (condition == "Submitted")
                 {
                     MultiView1.ActiveViewIndex = 4;
                     Submit.Enabled = false;
@@ -1197,7 +1199,7 @@ public partial class userapplication : System.Web.UI.Page
         string QUESTION3 = " ";
         string ANSWER3 = ruid + app_id + rec3_fname.Text + rec3_lname.Text;
 
-        int appstatus=2;
+        string appstatus="Submitted";
 
 
         string department = program.Text;
@@ -1242,7 +1244,7 @@ public partial class userapplication : System.Web.UI.Page
         System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
-        cmd.Parameters.Add("@app_status", System.Data.SqlDbType.Int).Value = appstatus;
+        cmd.Parameters.Add("@app_status", System.Data.SqlDbType.NChar).Value = appstatus;
 
         //update admin_info
         string updateCommand1 = "update admin_info set department=@department where ruid = @ruid and app_id=@app_id";
@@ -1264,7 +1266,7 @@ public partial class userapplication : System.Web.UI.Page
             mail1.To = rec1_email.Text;
             mail1.From = "ruapplysystem@gmail.com";
             mail1.Subject = "Online Recommendation Notification from RUapply System";
-            mail1.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation.  The Username is " + USERNAME1 + ". The Password is " + PASSWORD1 + ". Thank you!";
+            mail1.Body = "Hello, this is a notification for online recommendation from RUapply System.The name of application is " + name + ". Please use the Username and password below to finish the online recommendation. The address is http://211.95.79.70/default.aspx. The Username is " + USERNAME1 + ". The Password is " + PASSWORD1 + ". Thank you!";
 
             mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
             mail1.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
@@ -1297,7 +1299,7 @@ public partial class userapplication : System.Web.UI.Page
             mail2.To = rec2_email.Text;
             mail2.From = "ruapplysystem@gmail.com";
             mail2.Subject = "Online Recommendation Notification from RUapply System";
-            mail2.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation. The Username is " + USERNAME2 + ". The Password is " + PASSWORD2 + ". Thank you!";
+            mail2.Body = "Hello, this is a notification for online recommendation from RUapply System.The name of application is " + name + ". Please use the Username and password below to finish the online recommendation. The address is http://211.95.79.70/default.aspx. The Username is " + USERNAME2 + ". The Password is " + PASSWORD2 + ". Thank you!";
 
             mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
             mail2.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
@@ -1330,7 +1332,7 @@ public partial class userapplication : System.Web.UI.Page
             mail3.To = rec3_email.Text;
             mail3.From = "ruapplysystem@gmail.com";
             mail3.Subject = "Online Recommendation Notification from Ruapply System";
-            mail3.Body = "Hello, this is a notification for online recommendation from RUapply System.Please use the Username and password below to finish the online recommendation.  The Username is " + USERNAME3 + ". The Password is " + PASSWORD3 + ". Thank you!";
+            mail3.Body = "Hello, this is a notification for online recommendation from RUapply System.The name of application is " + name + ". Please use the Username and password below to finish the online recommendation. The address is http://211.95.79.70/default.aspx. The Username is " + USERNAME3 + ". The Password is " + PASSWORD3 + ". Thank you!";
             mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2);
             mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", "smtp.gmail.com");
             mail3.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", 465);
@@ -1361,6 +1363,8 @@ public partial class userapplication : System.Web.UI.Page
     protected void return_Click(object sender, EventArgs e)
     {
         Session["ruid"] = ruid;
+		string pgsrc = "app";
+        Session["srcpg"] = pgsrc;
         Response.Redirect("myaccount.aspx");
     }
     protected void viewps_Click(object sender, EventArgs e)

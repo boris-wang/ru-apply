@@ -19,12 +19,12 @@
       <td width="200"><img src="images/RU_SIG_ST_CMYK_S.jpg" alt="logo" width="200" height="79" /></td></tr></table></div>
   <div id="mainContent">
   <h1>Account Information</h1>
-  <p>Hi,
-      <asp:LoginName ID="username" runat="server" />, below is a summary of your 
-      account.
-            </p>
+  <p>Hi, <asp:Label ID="Label1" runat="server" Text=""></asp:Label>&nbsp;(RUID:
+          <asp:Label ID="Label2" runat="server" Text=""></asp:Label>), below is a summary of your account.</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
-      <tr><td align=right width="50%"></td>
+      <tr><td align=left width="50%">
+          <asp:Label ID="srcpg" runat="server" BackColor="#FFCCFF"></asp:Label>
+          </td>
       <td align=right width="50%">
           <asp:Button ID="logoff" runat="server" Text="Log Off" onclick="logoff_Click" />
           </td></tr><tr>
@@ -32,83 +32,73 @@
             view your personal information here, and modify your profile, like your home 
             address, phone number, and email address.</i></td>
         <td width="50%" height="40">
-                        [<a href=register_1.aspx>Change</a>]</td>
+                        <a href="register_1.aspx">Change</a></td>
       </tr>
       <tr>
-        <td width="50%" height="40"><strong><u>University Information</u></strong><br /><i>You can look up information pertaining to ranking, universities, programs, 
+        <td width="50%" height="40"><strong><u>University Information</u></strong><br /><i>
+            You can look up information pertaining to ranking, universities, programs, 
             faculty, and academic areas through the link on the right.</i></td>
-        <td width="50%" height="40">[<a href="uinfo.aspx">Look Up</a>]</td>
+        <td width="50%" height="40"><a href="uinfo.aspx" target="_blank">Look Up</a></td>
       </tr>
       <tr>
         <td width="50%" height="40"><strong><u>Applications</u></strong></td>
-        <td width="50%" height="40">[<a href=userapplication.aspx>Start A New Application</a>]</td>
+        <td width="50%" height="40">
+            <asp:Button ID="startnew" runat="server" Text="Start New Application" 
+                onclick="startnew_Click" />
+                    </td>
       </tr>
       </table>
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-      <td width="25%" align=center><u>Application ID</u></td>
-      <td width="25%" align=center><u>Start Time</u></td>
-      <td width="25%" align=center><u>Submission Time</u></td>
-      <td width="25%" align=center><u>Status</u></td>
-      </tr>
-      <tr>
-      <td width="25%" align=center valign=top>
-          <asp:Label ID="appid" runat="server" Text=""></asp:Label>
-          <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" 
-              DataSourceID="SqlDataSource4" ShowHeader=false BorderStyle=None>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000" bgcolor="#FFFFFF">
+      <tr><td>
+          <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+              DataSourceID="SqlDataSource1" Width="100%" CellPadding="4" 
+              ForeColor="#333333" GridLines="None">
+              <RowStyle BackColor="#FFFBD6" ForeColor="#333333" HorizontalAlign="Center" />
               <Columns>
-                  <asp:BoundField DataField="app_id" HeaderText="app_id" 
-                      SortExpression="app_id" />
+                  <asp:BoundField DataField="app_id" HeaderText="Application ID" 
+                      SortExpression="app_id"  />
+                  <asp:BoundField DataField="college_name" HeaderText="University" 
+                      SortExpression="college_name" />
+                  <asp:BoundField DataField="college_program" HeaderText="Program" 
+                        SortExpression="college_program" />
+                  <asp:BoundField DataField="app_status" HeaderText="Status" 
+                      SortExpression="app_status" />
               </Columns>
-          </asp:GridView>
-          <asp:SqlDataSource ID="SqlDataSource4" runat="server" 
-              ConnectionString="<%$ ConnectionStrings:ruapplyConnectionString %>" 
-              SelectCommand="SELECT [app_id] FROM [app_status]"></asp:SqlDataSource>
-          </td>
-      <td width="25%" align=center valign=top>
-          <asp:Label ID="tstart" runat="server" Text=""></asp:Label>
-          <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
-              DataSourceID="SqlDataSource1" ShowHeader=false BorderStyle="None">
-              <Columns>
-                  <asp:BoundField DataField="tstart" HeaderText="tstart" 
-                      SortExpression="tstart" />
-              </Columns>
+              <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+              <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+              <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+              <HeaderStyle BackColor="#ffb3b3" Font-Bold="True" ForeColor="Black" HorizontalAlign="Center" />
+              <EditRowStyle HorizontalAlign="Center" />
+              <AlternatingRowStyle BackColor="White" />
           </asp:GridView>
           <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-              ConnectionString="<%$ ConnectionStrings:ruapplyConnectionString %>" 
-              SelectCommand="SELECT [tstart] FROM [app_status]"></asp:SqlDataSource>
-          </td>
-      <td width="25%" align=center valign=top>
-          <asp:Label ID="tsubmit" runat="server" Text=""></asp:Label>
-          <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" 
-              DataSourceID="SqlDataSource2" ShowHeader=false BorderStyle="none">
-              <Columns>
-                  <asp:BoundField DataField="tsubmit" HeaderText="tsubmit" 
-                      SortExpression="tsubmit" />
-              </Columns>
-          </asp:GridView>
-          <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-              ConnectionString="<%$ ConnectionStrings:ruapplyConnectionString %>" 
-              SelectCommand="SELECT [tsubmit] FROM [app_status]"></asp:SqlDataSource>
-          </td>
-      <td width="25%" align=center valign=top>
-          <asp:Label ID="status" runat="server" Text=""></asp:Label>
-          <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" 
-              DataSourceID="SqlDataSource3" ShowHeader=false BorderStyle="none">
-              <Columns>
-                  <asp:BoundField DataField="status" HeaderText="status" 
-                      SortExpression="status" />
-              </Columns>
-          </asp:GridView>
-          <asp:SqlDataSource ID="SqlDataSource3" runat="server" 
-              ConnectionString="<%$ ConnectionStrings:ruapplyConnectionString %>" 
-              SelectCommand="SELECT [status] FROM [app_status]"></asp:SqlDataSource>
-          </td>
-      </tr></table>
+              ConnectionString="Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply" 
+ 
+              SelectCommand="SELECT [app_id], [college_name], [college_program], [app_status] FROM [application] WHERE ([ruid] = @ruid)">
+              <SelectParameters>
+                  <asp:SessionParameter Name="ruid" SessionField="ruid" Type="Int32" />
+              </SelectParameters>
+          </asp:SqlDataSource>
+            </td></tr></table>
+      
+      <!--<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td width="33%" align=center><u>Application ID</u></td>
+      <td width="34%" align=center><u>University Name</u></td>
+      <td width="33%" align=center><u>Status</u></td>
+      </tr>
+      <tr>
+      <td width="33%" align=center valign=top>
+      </td>
+      <td width="34%" align=center valign=top>
+      </td>
+      <td width="33%" align=center valign=top>
+      </td>
+      </tr></table>-->
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | Apply | Status | Admission | Site Map | 
-<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
     <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

@@ -1,5 +1,11 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register_2.aspx.cs" Inherits="register_2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+
+
+</script>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -112,7 +118,9 @@
         <td width="50%" height="40">
             <asp:DropDownList ID="DropDownList3" runat="server">
                 <asp:ListItem>China</asp:ListItem>
-                <asp:ListItem>U.S</asp:ListItem>
+                <asp:ListItem>Germany</asp:ListItem>
+                <asp:ListItem>India</asp:ListItem>
+                <asp:ListItem>United States</asp:ListItem>
             </asp:DropDownList>
           </td>
       </tr>
@@ -121,38 +129,54 @@
         </p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox1" runat="server" Width="240px"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="TextBox1" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
-        <td width="50%" height="40"><p align="right">* Street Address (Line 2)<br />
+        <td width="50%" height="40"><p align="right">Street Address (Line 2)<br />
         </p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox2" runat="server" Width="240px"></asp:TextBox>
-          </td>
+          &nbsp;&nbsp;
+            </td>
       </tr>
       <tr>
         <td width="50%" height="40"><p align="right">* City<br />
         </p></td>
         <td width="50%" height="40">
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                ControlToValidate="TextBox3" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* State/Province</div></td>
         <td height="40">
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                ControlToValidate="TextBox4" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Zip/Postal Code</div></td>
         <td height="40">
             <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                ControlToValidate="TextBox5" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Telephone Number</div></td>
         <td height="40">
             <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                ControlToValidate="TextBox6" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
@@ -162,9 +186,11 @@
         <td width="50%" height="40"><p align="right">* Same as Present Mailing Address?<br />
         </p>          </td>
         <td width="50%" height="40">
-            <asp:RadioButton ID="RadioButton1" runat="server" Text="      Yes" />
+            <asp:RadioButton ID="RadioButton1" runat="server" Text="Yes" Checked="True" 
+                GroupName="1" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:RadioButton ID="RadioButton2" runat="server" Text="      No" />
+            <asp:RadioButton ID="RadioButton2" runat="server" Text="No" GroupName="1" />
+          &nbsp;&nbsp;
           </td>
       </tr>
       <tr>
@@ -175,7 +201,9 @@
         <td width="50%" height="40">
             <asp:DropDownList ID="DropDownList5" runat="server">
                 <asp:ListItem>China</asp:ListItem>
-                <asp:ListItem>U.S</asp:ListItem>
+                <asp:ListItem>Germany</asp:ListItem>
+                <asp:ListItem>India</asp:ListItem>
+                <asp:ListItem>United States</asp:ListItem>
             </asp:DropDownList>
           </td>
       </tr>
@@ -235,13 +263,17 @@
         <td height="40"><div align="right">* Primary Email Address<br />
         </div></td>
         <td height="40">
-            <asp:TextBox ID="TextBox13" runat="server" Width="200px"></asp:TextBox>
+            <asp:TextBox ID="TextBox13" runat="server" Width="180px"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="TextBox13" ErrorMessage="Invalid email address" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
           </td>
       </tr>
       <tr>
         <td height="40"><div align="right">Secondary Email Address</div></td>
         <td>
-            <asp:TextBox ID="TextBox14" runat="server" Width="200px"></asp:TextBox>
+            <asp:TextBox ID="TextBox14" runat="server" Width="180px"></asp:TextBox>
           </td>
       </tr>
       <tr>
@@ -252,29 +284,39 @@
         <td height="40"><div align="right">* First Name</div></td>
         <td>
             <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                ControlToValidate="TextBox15" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Last Name</div></td>
         <td>
             <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
+          &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                ControlToValidate="TextBox16" ErrorMessage="Required"></asp:RequiredFieldValidator>
           </td>
       </tr>
       <tr>
         <td height="40"><div align="right">* Telephone Number</div></td>
         <td>
             <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
+                    &nbsp;&nbsp;
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                ControlToValidate="TextBox17" ErrorMessage="Required"></asp:RequiredFieldValidator>
                     </td>
       </tr>
       <tr>
         <td height="40" colspan="2"><div align="center">
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/register_1.aspx">Previous 
-            Page</asp:LinkButton>
+            <asp:Button ID="Button1" runat="server" Text="Previous" 
+                onclick="Button1_Click" Font-Bold="True" Font-Italic="False" 
+                Font-Size="Small" Width="75px" />
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button2" runat="server" 
+                Text="Save" onclick="Button2_Click1" Font-Bold="True" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton2" runat="server">Save</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/register_3.aspx">Next 
-            Page</asp:LinkButton>
+            <asp:Button ID="Button3" runat="server" Text="Next" 
+                onclick="Button3_Click" Height="26px" Font-Bold="True" Width="75px" />
             </div></td>
         </tr>
     </table>
@@ -282,8 +324,8 @@
         </p>
     <!-- end #mainContent --></div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
-<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">

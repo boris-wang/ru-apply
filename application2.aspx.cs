@@ -57,14 +57,13 @@ public partial class application2 : System.Web.UI.Page
         string emp3_yyyy_to = yyto3.Text;
         string describe_3 = describe3.Text;
 //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection ="Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
 //update function
         string updateCommand = "update emp_info set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid=@ruid";
-System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-(updateCommand, myConnection);
+        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@emp1name", System.Data.SqlDbType.NChar, 100).Value = emp1_name;
@@ -142,14 +141,13 @@ System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
         string emp3_yyyy_to = yyto3.Text;
         string describe_3 = describe3.Text;
 //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+string MysqlConnection ="Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
 //update function
         string updateCommand = "update emp_info set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid=@ruid";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-(updateCommand, myConnection);
+        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@emp1name", System.Data.SqlDbType.NChar, 100).Value = emp1_name;
@@ -226,14 +224,13 @@ string MysqlConnection ="Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog 
         string emp3_yyyy_to = yyto3.Text;
         string describe_3 = describe3.Text;
         //open connection, data source is the sever name; initial catalog is the name of the database, integrated security is because i use the a windows authentification
-        string MysqlConnection = "Data Source = LENDLICE-PC\\SQLEXPRESS; Initial Catalog = ruapply;Integrated Security = True";
+        string MysqlConnection = "Data Source = localhost; Initial Catalog = RUapply; user id=ruapply;password=ruapply";
         SqlConnection myConnection = new SqlConnection(MysqlConnection);
         myConnection.Open();
 
         //update function
         string updateCommand = "update emp_info set app_id=@app_id,emp1_name=@emp1name,type1=@type1,title1=@title1,city1=@city1,state1=@state1,country1=@country1,emp1_mmfrom=@mmfrom1,emp1_yyyyfrom=@yyfrom1,emp1_mmto=@mmto1,emp1_yyyyto=@yyto1,describe1=@describe1,emp2_name=@emp2name,type2=@type2,title2=@title2,city2=@city2,state2=@state2,country2=@country2,emp2_mmfrom=@mmfrom2,emp2_yyyyfrom=@yyfrom2,emp2_mmto=@mmto2,emp2_yyyyto=@yyto2,describe2=@describe2,emp3_name=@emp3name,type3=@type3,title3=@title3,city3=@city3,state3=@state3,country3=@country3,emp3_mmfrom=@mmfrom3,emp3_yyyyfrom=@yyfrom3,emp3_mmto=@mmto3,emp3_yyyyto=@yyto3,describe3=@describe3 where ruid=@ruid";
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand
-        (updateCommand, myConnection);
+        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(updateCommand, myConnection);
         cmd.Parameters.Add("@ruid", System.Data.SqlDbType.Int).Value = ruid;
         cmd.Parameters.Add("@app_id", System.Data.SqlDbType.Int).Value = app_id;
         cmd.Parameters.Add("@emp1name", System.Data.SqlDbType.NChar, 100).Value = emp1_name;

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" ContentType="text/html" ResponseEncoding="utf-8" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="register_4.aspx.cs" Inherits="register_4" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -217,12 +217,14 @@
         </div></td>
         <td width="50%" height="40"><label>
             <asp:TextBox ID="TextBox4" runat="server" Width="49px"></asp:TextBox>
-&nbsp;/ </label></td>
+            </label>
+                    </td>
       </tr>
       <tr>
         <td height="40"><div align="right">Subject</div></td>
         <td height="40">
             <asp:DropDownList ID="DropDownList5" runat="server">
+                <asp:ListItem>Select one</asp:ListItem>
                 <asp:ListItem>Biology</asp:ListItem>
                 <asp:ListItem>Biochemistry</asp:ListItem>
                 <asp:ListItem>Chemistry</asp:ListItem>
@@ -631,7 +633,9 @@
       </tr>
       <tr>
         <td height="40" align="right">Score</td>
-        <td>&nbsp;</td>
+        <td><label>
+                        <asp:TextBox ID="TextBox10" runat="server" Width="49px"></asp:TextBox>
+            &nbsp;/ 9.0</label></td>
       </tr>
       <tr>
         <td height="40" colspan="2"><p><strong><u>TSE</u></strong></p></td>
@@ -641,6 +645,7 @@
    Date Taken / Expected</td>
         <td><label>
             <asp:DropDownList ID="DropDownList14" runat="server">
+                
                 <asp:ListItem>Jan</asp:ListItem>
                 <asp:ListItem>Feb</asp:ListItem>
                 <asp:ListItem>Mar</asp:ListItem>
@@ -654,7 +659,7 @@
                 <asp:ListItem>Nov</asp:ListItem>
                 <asp:ListItem>Dec</asp:ListItem>
             </asp:DropDownList>
-&nbsp;/
+            &nbsp;/
             <asp:DropDownList ID="DropDownList15" runat="server">
                 <asp:ListItem>1949</asp:ListItem>
                 <asp:ListItem>1950</asp:ListItem>
@@ -721,30 +726,25 @@
                     </td>
       </tr>
       <tr>
-        <td height="40"><div align="right">Score</div></td>
+        <td height="40"align=right>Score</td>
         <td><label>
-            <asp:TextBox ID="TextBox8" runat="server" Width></asp:TextBox>
-      <tr>
+            <asp:TextBox ID="TextBox8" runat="server" Width="49px"></asp:TextBox>
+      &nbsp;/ 60<tr>
         <td height="40" colspan="2"><div align="center">
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/register_3.aspx">Previous 
-            Page</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton2" runat="server">Save</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="LinkButton3" runat="server">Finish</asp:LinkButton>
+            <asp:Button ID="Button1" runat="server" Text="Previous" 
+                onclick="Button1_Click1" Font-Bold="True" Width="75px" />
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button2" 
+                runat="server" Text="Save" onclick="Button2_Click" Font-Bold="True" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="Button3" runat="server" Text="Submit" onclick="Button3_Click" 
+                Font-Bold="True" Width="75px" />
             </div></td>
         </tr>
     </table>
   </div>
   <div id="footer">
-<p align="center"><span class="smallnote"><a href="default.aspx">Home</a> | Information | Apply | Status | Admission | Site Map | 
-<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></span></p>
-    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-5821511-1";
-urchinTracker();
-</script>
+<p align="center"><a href="myaccount.aspx">Home</a> | <a href="uinfo.aspx">Information</a> | <a href="userapplication.aspx">Apply</a> | <a href="myaccount.aspx">Status</a> | Admission | Site Map | 
+<a href="about.aspx">About</a> | <a href="help.aspx">Help</a></p>
   <!-- end #footer --></div>
 <!-- end #container --></div>
     </form>
